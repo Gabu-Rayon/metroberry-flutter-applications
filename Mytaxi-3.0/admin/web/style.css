@@ -1,0 +1,81 @@
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  color: #111;
+}
+/* Loader */
+.preloader {
+  position: fixed;
+  inline-size: 100%;
+  block-size: 100%;
+  background-color: #fff;
+  display: grid;
+  place-items: center;
+}
+.theme-dark .preloader {
+  background-color: #111;
+  color: #FFF;
+}
+.theme-dark .placeholder {
+  background-color: #555;
+}
+.placeholder-wide {
+  inline-size: 12rem;
+}
+.animation-image {
+  display: none;
+}
+/* Common Classes */
+.d-flex {
+  display: flex;
+}
+.align-items-center {
+  align-items: center;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.justify-content-between {
+  justify-content: space-between;
+}
+.flex-column {
+  flex-direction: column;
+}
+.text-center {
+  text-align: center;
+}
+.gap-3 {
+  gap: 1rem;
+}
+.gap-4 {
+  gap: 1.5rem;
+}
+.gap-5 {
+  gap: 3rem;
+}
+@keyframes animloader {
+  0% {
+    left: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    left: 100%;
+    transform: translateX(0%);
+  }
+}
+@keyframes animloaderimg {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
