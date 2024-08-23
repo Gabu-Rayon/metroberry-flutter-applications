@@ -1,0 +1,2116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mytaxi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Inter, sans-serif;
+        }
+
+        .topbar {
+            padding: 10px 0;
+            background-color: #FEA735;
+        }
+
+        .container {
+            width: 85%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .container_desc {
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #FEA735;
+            /* background-image: url('./images/Map-background.png'); */
+        }
+
+        .container_main_support {
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #F5F6F6;
+            margin-top: 45px;
+        }
+
+        .container_main_preview {
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 52px;
+        }
+
+        .container_main {
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* background-color: #F5F6F6; */
+            margin-top: 52px;
+        }
+
+        .main_container {
+            width: 85%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .main_container_support {
+            width: 85%;
+            margin: 0 auto;
+            display: flex;
+            /* justify-content: space-between; */
+            align-items: center;
+            gap: 52px;
+        }
+
+        .main_container_preview {
+            width: 85%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 52px;
+        }
+
+        .main_container_preview_service {
+            width: 100%;
+            /* margin: 0 auto; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 52px;
+        }
+
+        .container_main_preview_service {
+            width: 85%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            /* margin-top: 52px; */
+        }
+
+        .cab-service-image {
+            width: 50%;
+        }
+
+        .main_container_contact {
+            width: 85%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            border: 1px solid #E4E7E9;
+            border-radius: 10px;
+            padding: 40px;
+        }
+
+        .logo {
+            font-size: 24px;
+        }
+
+        .nav-links {
+            list-style-type: none;
+        }
+
+        .nav-links li a:hover {
+            color: #232529;
+            font-weight: 700;
+        }
+
+        .nav-links li {
+            display: inline;
+            margin-left: 20px;
+        }
+
+        .nav-links li a {
+            color: #232529;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .btn {
+            background-color: #FEA735;
+            color: #fff;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            color: #131416;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+        }
+
+        .btn_download {
+            background-color: #F5F6F6;
+            color: #fff;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            color: #131416;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .btn_tracking {
+            background-color: #FEC376;
+            color: #331D00;
+            padding: 5px 10px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            /* border: 1px solid #FE9001; */
+        }
+
+        .btn_google {
+            background-color: #131416;
+            color: #ffffff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .btn_desc {
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+        }
+
+        .btn_desc_title {
+            font-size: 10px;
+            font-weight: 100;
+        }
+
+        .btn_desc_subtitle {
+            font-size: 18px;
+            font-weight: 100;
+            margin-top: 3px;
+        }
+
+        .btn_app_store {
+            background-color: #131416;
+            color: #ffffff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+        }
+
+        .btn_container {
+            display: flex;
+        }
+
+        .menu_btn {
+            display: flex;
+        }
+
+        .nav-toggle-btn {
+            display: none;
+            /* background-color: #FEA735; */
+            color: #fff;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            color: #131416;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .tracking_container {
+            /* width: 50%; */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .tracking_container_service {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-left: 52px;
+        }
+
+        .main_desc {
+            margin-top: 4px;
+            font-size: 52px;
+            letter-spacing: -2px;
+            font-weight: 700;
+        }
+
+        .main_desc_feature {
+            margin-top: 4px;
+            font-size: 32px;
+            letter-spacing: -2px;
+            font-weight: 700;
+            line-height: 40px;
+        }
+
+        .title_desc {
+            margin-top: 5px;
+            font-size: 16px;
+            /* width: 90%; */
+            font-weight: 400;
+            line-height: 24px;
+            /* text-align: center; */
+        }
+
+        .title_desc_service {
+            margin-top: 10px;
+            font-weight: lighter;
+            font-size: 17px;
+            width: 90%;
+        }
+
+        .google_btn {
+            display: flex;
+            margin-top: 30px;
+        }
+
+        .google_btn_download {
+            display: flex;
+            margin-top: 30px;
+        }
+
+        .mobile_image {
+            margin-top: 100px;
+            width: 50%;
+        }
+
+        .text_color {
+            color: #FE9001;
+        }
+
+        .about_container {
+            width: 85%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 32px;
+        }
+
+        .about_mode_container {
+            width: 85%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            margin-top: 5%;
+        }
+
+        .feature_container {
+            width: 85%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-direction: column;
+            margin-top: 5%;
+        }
+
+        .card_container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 52px;
+        }
+
+        .card_container_booking {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 52px;
+            width: -webkit-fill-available;
+            gap: 20px;
+        }
+
+        .image_container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 52px;
+            width: -webkit-fill-available;
+        }
+
+        .card_image {
+            padding: 10px;
+            flex: 1 1 30%;
+            box-sizing: border-box;
+        }
+
+        .card_image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .card {
+            border: 1px solid #E4E7E9;
+            border-radius: 8px;
+            padding: 20px;
+            width: 30%;
+            margin: 10px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .card_booking {
+            border: 1px solid #E4E7E9;
+            border-radius: 12px;
+            padding: 32px;
+            width: 30%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .booking-image {
+            width: -webkit-fill-available;
+        }
+
+        .card_booking h1 {
+            color: #FEA735;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 24px;
+            text-align: left;
+        }
+
+        .card_booking p {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 24px;
+            text-align: left;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .card_booking_btn {
+            padding: 12px 16px 12px 16px;
+            background: #F5F6F6;
+            border-radius: 8px;
+            color: #232529;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 24px;
+            margin-top: 16px;
+            cursor: pointer;
+        }
+
+        .card h4 {
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 26px;
+        }
+
+        .card p {
+            font-size: 16px;
+            margin-bottom: 0;
+            line-height: 24px;
+            font-weight: 400;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact_form {
+                background-color: #F5F6F6;
+                width: 100% !important;
+                border-radius: 12px;
+                padding: 25px;
+            }
+
+            .container_contact_form {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .download_main_container {
+                padding: 32px;
+            }
+
+
+            .form_container_name {
+                margin-left: 0 !important;
+                width: 100% !important;
+                display: block !important;
+            }
+
+            .google_btn_download {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .app-store-download-btn {
+                /* margin-left: 10px; */
+                cursor: pointer;
+                margin-top: 10px;
+            }
+
+            .play-store-download-btn {
+                cursor: pointer;
+            }
+
+            .btn_tracking {
+                margin-top: 20px;
+            }
+
+            .form_container_div {
+                display: block !important;
+            }
+
+            .contact_form {
+                margin-top: 20px;
+            }
+
+            .form_container {
+                width: 100% !important;
+                display: block !important;
+            }
+
+            .main_container_contact {
+                width: 85%;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 32px;
+                margin-bottom: 50px;
+                border: 1px solid #E4E7E9;
+                border-radius: 10px;
+                padding: 20px;
+                flex-direction: column;
+            }
+
+            .menu_btn {
+                display: flex;
+                width: 100%;
+                justify-content: flex-start;
+                /* margin-left: 20px; */
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-toggle-btn {
+                display: block;
+            }
+
+            .btn_container {
+                display: none;
+            }
+
+            .image_icon {
+                display: none;
+            }
+
+            .btn_container.show {
+                display: flex;
+            }
+
+            .nav-links.show {
+                display: block;
+            }
+
+            .image_icon.show {
+                display: block;
+            }
+
+            .tracking_container {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                margin-top: 10px;
+            }
+
+            .tracking_container_service {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                margin-top: 10px;
+                margin-left: 0;
+            }
+
+            .main_container_preview_service {
+                width: 100%;
+                /* margin: 0 auto; */
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 52px;
+                flex-direction: column-reverse;
+            }
+
+            .mobile_image {
+                margin-top: 12px;
+                width: 107%;
+            }
+
+            .main_desc {
+                margin-top: 4px;
+                font-size: 36px;
+                letter-spacing: -2px;
+                font-weight: 700;
+            }
+
+
+            .cab-service-image {
+                margin-top: 52px;
+                width: 107%;
+            }
+
+            .main_container {
+                width: 85%;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: column;
+                margin-top: 15px;
+            }
+
+            .main_container_support {
+                width: 85%;
+                margin: 0 auto;
+                display: flex;
+                /* justify-content: space-between; */
+                flex-direction: column-reverse;
+                align-items: center;
+                gap: 52px;
+            }
+
+            .main_container_preview {
+                width: 85%;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .container_main_preview_service {
+                width: 85%;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: column;
+                margin-top: 20px;
+            }
+
+            .card {
+                border: 1px solid #E4E7E9;
+                border-radius: 8px;
+                padding: 20px;
+                width: 100%;
+                margin: 10px;
+                box-sizing: border-box;
+                text-align: center;
+            }
+
+            .service_card_container {
+                display: flex;
+                justify-content: space-around;
+                margin-top: 0px !important;
+                width: 100%;
+                flex-direction: column;
+            }
+
+
+            .service_card {
+                background-color: #F5F6F6;
+                border: 1px solid #E4E7E9;
+                border-radius: 8px;
+                padding: 20px;
+                width: 100% !important;
+                margin-top: 20px !important;
+            }
+
+            .footer_main_container {
+                width: 85%;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .testimonial-container-footer {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-top: 0px !important;
+                margin-bottom: 0px !important;
+            }
+
+            .card_container_booking {
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: 52px;
+                width: min-content;
+                gap: 24px;
+                flex-direction: column;
+            }
+
+            .booking-image {
+                width: -webkit-fill-available;
+            }
+
+            .card_booking {
+                border: 1px solid #E4E7E9;
+                border-radius: 12px;
+                padding: 16px;
+                width: 90%;
+                box-sizing: border-box;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-content: center;
+                justify-content: center;
+                /* align-items: center; */
+                margin-left: 16px;
+            }
+
+            .mode_container_div {
+                display: flex;
+                flex-direction: column !important;
+                justify-content: space-between;
+                align-items: flex-start !important;
+            }
+
+            .app_preview {
+                display: flex;
+                flex-direction: column;
+                width: 100% !important;
+                margin-top: 52px;
+            }
+
+            .testimonial-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                /* margin: 20px; */
+            }
+
+            .testimonial-container-main {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                /* margin: 20px; */
+            }
+
+        }
+
+        @media (max-width: 768px) {
+            .card_image {
+                flex: 1 1 45%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card_image {
+                flex: 1 1 100%;
+            }
+        }
+
+        .about_text {
+            color: #FEA735;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 24px;
+        }
+
+        .footer_container_main hr {
+            border: none;
+            height: 1px;
+            background-color: #383A41;
+            margin: 0 145px;
+        }
+
+        .responsive-image {
+            width: 100%;
+            height: auto;
+            margin-top: 30px;
+            display: block;
+            margin-top: 52px;
+        }
+
+        .service_card_container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .service_card {
+            background-color: #F5F6F6;
+            border: 1px solid #E4E7E9;
+            border-radius: 8px;
+            padding: 20px;
+            width: 45%;
+        }
+
+        .service_card h2 {
+            margin-top: 0;
+            font-size: 14px;
+        }
+
+        .service_card p {
+            font-size: 14px;
+            color: #232529;
+        }
+
+        .service_card_box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .arrived_container {
+            margin-left: 10px;
+        }
+
+        .arrived_container_card {
+            margin-left: 10px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .service_text {
+            color: #FEA735;
+            font-weight: 100;
+            margin-left: 5px;
+            font-size: 14px;
+        }
+
+        .service_btn_container {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-container-main {
+            display: flex;
+            /* flex-wrap: wrap; */
+            justify-content: center;
+            margin-top: 52px;
+        }
+
+        .testimonial-container {
+            display: flex;
+            /* flex-wrap: wrap; */
+            justify-content: center;
+            /* margin-top: 52px; */
+        }
+
+        .testimonial-card {
+            background-color: #F5F6F6;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 10px;
+            flex: 1 1 calc(25% - 40px);
+        }
+
+        .testimonial-card p {
+            margin: 0;
+            color: #232529;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .testimonial-card-1 p {
+            margin: 0;
+            color: #232529;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .testimonial-card-2 p {
+            margin: 0;
+            color: #232529;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .testimonial-card-3 p {
+            margin: 0;
+            color: #232529;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 1200px) {
+            .testimonial-card {
+                flex: 1 1 calc(33.333% - 40px);
+            }
+
+            .testimonial-card-1 {
+                flex: 1 1 calc(33.333% - 40px);
+            }
+
+            .testimonial-card-2 {
+                flex: 1 1 calc(33.333% - 40px);
+            }
+
+            .testimonial-card-3 {
+                flex: 1 1 calc(33.333% - 40px);
+            }
+
+        }
+
+        @media (max-width: 992px) {
+            .testimonial-card {
+                flex: 1 1 calc(50% - 40px);
+            }
+
+            .testimonial-card-1 {
+                flex: 1 1 calc(50% - 40px);
+            }
+
+            .testimonial-card-2 {
+                flex: 1 1 calc(50% - 40px);
+            }
+
+            .testimonial-card-3 {
+                flex: 1 1 calc(50% - 40px);
+            }
+
+        }
+
+        @media (max-width: 576px) {
+            .testimonial-card {
+                flex: 1 1 100%;
+            }
+
+            .testimonial-card-1 {
+                flex: 1 1 100%;
+            }
+
+            .testimonial-card-2 {
+                flex: 1 1 100%;
+            }
+
+            .testimonial-card-3 {
+                flex: 1 1 100%;
+            }
+
+            .app_image {
+                display: none;
+            }
+        }
+
+        .rating_card {
+            margin-top: 5px;
+        }
+
+        .download_container_main {
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .testimonial-image {
+            margin-top: 45px;
+            width: 100%;
+        }
+
+        .download_main_container {
+            width: 85%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #FEA735;
+            /* background-image: url('./images/Minimal\ Pattern\ -\ 6\ -\ B.png'); */
+            margin-bottom: 20px;
+            padding: 50px;
+            margin-top: 12%;
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .download_title_desc {
+            margin-top: 15px;
+            font-weight: lighter;
+            font-size: 14px;
+            width: 90%;
+            display: flex;
+            align-items: center;
+        }
+
+        .arrow_image {
+            margin-right: 10px;
+        }
+
+        .app_image {
+            position: absolute;
+            right: 0;
+            bottom: 1px;
+        }
+
+        .map_image {
+            width: -webkit-fill-available;
+            margin-top: 20px;
+        }
+
+        .footer_container_main {
+            margin: 0 auto;
+            /* display: flex; */
+            justify-content: space-between;
+            align-items: center;
+            background-color: #131416;
+        }
+
+        .footer_main_container {
+            width: 85%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .testimonial-container-footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .testimonial-card-footer {
+            /* padding: 20px; */
+            margin: 10px;
+            flex: 1 1 calc(25% - 40px);
+        }
+
+        .vl {
+            border-left: 2px solid #383A41;
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+
+        .testimonial-condition-footer {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .testimonial-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 32px;
+        }
+
+        .main_container_footer {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .footer_logos {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            width: 138px;
+        }
+
+        .rating_card {
+            color: #CCD0D5;
+            font-size: 14px;
+            /* margin-top: 10px; */
+            font-weight: 100;
+            line-height: 20px;
+        }
+
+        .rating_card_title {
+            color: #ffffff;
+            font-size: 12px;
+        }
+
+        .contact_form {
+            background-color: #F5F6F6;
+            width: 50%;
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        .input_container {
+            border: none;
+            border-radius: 100px;
+            height: 48px;
+            padding: 15px;
+            margin-top: 8px;
+            font-size: 16px;
+        }
+
+        .input_container_msg {
+            border: none;
+            border-radius: 5px;
+            /* height: 48px; */
+            padding: 15px;
+            margin-top: 8px;
+            font-size: 16px;
+            overflow: hidden;
+        }
+
+        .input_label {
+            font-size: 12px;
+        }
+
+        .form_container {
+            display: flex;
+            flex-direction: column;
+            width: 47%;
+        }
+
+        .form_container_name {
+            display: flex;
+            flex-direction: column;
+            width: 47%;
+            margin-left: 20px;
+        }
+
+        .container_contact_form {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form_container_div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .btn_submit {
+            background-color: #FEA735;
+            color: #131416;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            margin-left: 10px;
+            line-height: 24px;
+        }
+
+        .contact_btn_container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sidenav {
+            height: 0;
+            width: 100%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #131416;
+            overflow-y: hidden;
+            transition: height 0.5s;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            color: #CCD0D5;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            /* top: 10px; */
+            right: 25px;
+            font-size: 32px;
+            /* margin-right: 16px; */
+        }
+
+        .sidenav_container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 7px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+
+        .app-store-btn {
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .play-store-btn {
+            cursor: pointer;
+        }
+
+        .mode_container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mode_container_div {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .responsive-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 45px;
+        }
+
+        /* Toggle switch styles */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 36px;
+            height: 22px;
+            margin-left: 20px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #F5F6F6;
+            transition: .4s;
+            border-radius: 20px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            /* Increased size for better visibility */
+            width: 16px;
+            /* Increased size for better visibility */
+            left: 2px;
+            /* Adjusted for new size */
+            bottom: 2px;
+            /* Adjusted for new size */
+            background-color: #FEA735;
+            background-image: url('./images/light-mode.png');
+            background-size: auto;
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: .4s;
+            border-radius: 50%;
+            top: 3px;
+        }
+
+        input:checked+.slider {
+            background-color: #F5F6F6;
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(14px);
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(14px);
+            background-image: url('./images/dark-mood.svg');
+        }
+
+        .modeText_container {
+            display: flex;
+            margin-top: 12px;
+        }
+
+        .app_preview {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+        }
+
+        .cab-service-image1 {
+            display: none;
+        }
+
+        .cab-service-image1.show {
+            display: block;
+        }
+
+        .customerAppBtn {
+            background: #FFF8F0;
+            border: none;
+            padding: 15px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .customerAppBtn.active {
+            background: #FEA735;
+        }
+
+        .btn_group_container {
+            background: #FFF8F0;
+            padding: 20px;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="mySidenav" class="sidenav">
+        <div class="sidenav_container">
+            <img src="./images/footer-logo.svg" />
+            <img src="./images/close_line.png" class="closebtn" onclick="closeNav()" />
+            <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+        </div>
+        <a href="#" onclick="scrollToSection('about_container')">About Us</a>
+        <a href="#" onclick="scrollToSection('services_container')">Services</a>
+        <a href="#" onclick="scrollToSection('feature_container')">Features</a>
+        <a href="#" onclick="scrollToSection('contact_container')">Contact Us</a>
+    </div>
+
+
+    <div class="topbar">
+        <div class="container">
+            <img src="./images/main_icon.png" class="image_icon" />
+            <ul class="nav-links">
+                <li><a href="#" onclick="scrollToSection('about_container')">About Us</a></li>
+                <li><a href="#" onclick="scrollToSection('services_container')">Services</a></li>
+                <li><a href="#" onclick="scrollToSection('feature_container')">Features</a></li>
+                <li><a href="#" onclick="scrollToSection('contact_container')">Contact Us</a></li>
+            </ul>
+            <!-- <div class="btn_container">
+                <a href="#" class="btn_download"><img src="./images/download_line.png" />&nbsp;Download App</a>
+                <a href="#" class="btn">Login</a>
+            </div> -->
+        </div>
+        <div class="menu_btn">
+            <!-- <button class="nav-toggle-btn" onclick="openNav()">Menu</button> -->
+            <img src="./images/menu_line.png" alt="menu" onclick="openNav()" class="nav-toggle-btn">
+            <!-- <span class="nav-toggle-btn" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span> -->
+        </div>
+
+    </div>
+
+    <div class="container_desc">
+        <div class="main_container">
+            <div class="tracking_container">
+                <a href="#" class="btn_tracking"><img src="./images/location.svg" />&nbsp;Real time GPS Tracking</a>
+                <h1 class="main_desc">Your Fast Track to City Exploration with My Taxi
+                    <!-- <span class="text_color">My Taxi</span> -->
+                </h1>
+                <h4 class="title_desc">Effortlessly book rides, navigate with ease, and discover new destinations, all
+                    in the palm of your hand</h4>
+                <div class="google_btn">
+                    <img class="play-store-btn" src="./images/playstore.svg" />
+                    <img class="app-store-btn" src="./images/appstore.svg" />
+                </div>
+            </div>
+            <img src="./images/mockup.svg" class="mobile_image" />
+        </div>
+    </div>
+
+    <div class="about_container" id="about_container">
+        <h5 class="about_text">About Us</h5>
+        <h1 class="main_desc">Your Reliable Cab Booking Solution</h1>
+        <h4 class="title_desc">Discover our story and commitment to providing seamless, reliable, and convenient
+            transportation services for all your travel needs.</h4>
+
+        <div class="card_container">
+            <div class="card">
+                <img src="./images/service.png" />
+                <h4>Reliable Service</h4>
+                <p>Ensure users that My Taxi provides reliable transportation services, with safe rides to their
+                    destinations</p>
+            </div>
+            <div class="card">
+                <img src="./images/safety.png" />
+                <h4>Safety and Security</h4>
+                <p>Assure users of My Taxi's commitment to safety, real-time ride tracking, and secure payment options
+                </p>
+            </div>
+            <div class="card">
+                <img src="./images/review.png" />
+                <h4>Driver Ratings and Reviews</h4>
+                <p>Ability for users to rate and review drivers, ensuring accountability and quality service</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="feature_container">
+        <h5 class="about_text">Key Features</h5>
+        <h3 class="main_desc_feature">Experience the Difference with Our Innovative Features</h3>
+        <h4 class="title_desc">Unlock the convenience of seamless booking, real-time tracking, secure payments, and
+            round-the-clock support with My Taxi's essential features.</h4>
+
+        <div class="image_container">
+            <div class="card_image">
+                <img src="./images/Feature 1.png" alt="Feature 1">
+            </div>
+            <div class="card_image">
+                <img src="./images/Feature 3.png" alt="Feature 3">
+            </div>
+            <div class="card_image">
+                <img src="./images/Feature 2.png" alt="Feature 2">
+            </div>
+        </div>
+    </div>
+
+    <div class="about_container" id="about_container">
+        <h5 class="about_text">How it works</h5>
+        <h1 class="main_desc">Effortless Ride Booking in 3 Steps</h1>
+        <h4 class="title_desc">Simple Steps to Seamless Rides</h4>
+
+        <div class="card_container_booking">
+            <div class="card_booking">
+                <h1>Book</h1>
+                <p>Choose your ride and location.</p>
+                <img src="./images/choice-trip.svg" class="booking-image" />
+                <div class="card_booking_btn">Learn more</div>
+            </div>
+            <div class="card_booking">
+                <h1>Track</h1>
+                <p>Follow your driver's arrival in real-time.</p>
+                <img src="./images/track-image.svg" class="booking-image" />
+                <div class="card_booking_btn">Learn more</div>
+            </div>
+            <div class="card_booking">
+                <h1>Ride</h1>
+                <p>Enjoy a safe journey to your destination.</p>
+                <img src="./images/ride-map.svg" class="booking-image" />
+                <div class="card_booking_btn">Learn more</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container_main_support">
+        <div class="main_container_support">
+            <img src="./images/multi_language_support.png" class="mobile_image" />
+            <div class="tracking_container">
+                <h5 class="about_text">RTL & LTR</h5>
+                <h1 class="main_desc_feature">Multiple Language Support</h1>
+                <h4 class="title_desc">connect with customers worldwide with our seamless multilingual support</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="container_main_preview">
+        <div class="main_container_preview">
+            <div class="tracking_container">
+                <h5 class="about_text">App Preview</h5>
+
+                <div id="customerContent" class="customer_content">
+                    <h1 class="main_desc_feature">Get a Sneak Peek: View Our App Preview!</h1>
+                    <h4 class="title_desc">Explore the intuitive interfaces and powerful features of our driver and
+                        customer
+                        apps before you ride!</h4>
+
+                    <div class="tracking_container">
+
+                        <h4 class="download_title_desc"><img src="./images/check_circle_fill.svg"
+                                class="arrow_image" />Seamless ride booking with multiple vehicle options</h4>
+
+                        <h4 class="download_title_desc"><img src="./images/check_circle_fill.svg"
+                                class="arrow_image" />Live
+                            tracking for monitoring ride progress.
+                        </h4>
+
+                        <h4 class="download_title_desc"><img src="./images/check_circle_fill.svg"
+                                class="arrow_image" />Secure payment options with wallet integration.</h4>
+
+                        <h4 class="download_title_desc"><img src="./images/check_circle_fill.svg"
+                                class="arrow_image" />Driver rating and feedback system.</h4>
+
+                        <h4 class="download_title_desc"><img src="./images/check_circle_fill.svg"
+                                class="arrow_image" />Push
+                            notifications for ride updates and promotions.</h4>
+
+                        <div class="google_btn">
+                            <img class="play-store-btn" src="./images/playstore.svg" />
+                            <img class="app-store-btn" src="./images/appstore.svg" />
+                        </div>
+                    </div>
+                </div>
+
+                <div id="driverContent" class="driver_content" style="display: none;">
+                    <h1 class="main_desc_feature">Get a Sneak Peek: View Our App Preview!</h1>
+                    <h4 class="title_desc">Explore the intuitive interfaces and powerful features of our driver and
+                        customer apps before you ride!</h4>
+
+                    <div class="tracking_container">
+
+                        <h4 class="download_title_desc"><img src="./images/check_circle_fill.svg"
+                                class="arrow_image" />Real-time ride notifications.</h4>
+
+                        <h4 class="download_title_desc"><img src="./images/check_circle_fill.svg"
+                                class="arrow_image" />GPS
+                            navigation for efficient routes.
+                        </h4>
+
+                        <h4 class="download_title_desc"><img src="./images/check_circle_fill.svg"
+                                class="arrow_image" />Earnings tracking and withdrawal options.</h4>
+
+                        <h4 class="download_title_desc"><img src="./images/check_circle_fill.svg"
+                                class="arrow_image" />In-app chat for communication with passengers.</h4>
+
+                        <h4 class="download_title_desc"><img src="./images/check_circle_fill.svg"
+                                class="arrow_image" />Availability toggle for managing work hours.</h4>
+
+                        <div class="google_btn">
+                            <img class="play-store-btn" src="./images/playstore.svg" />
+                            <img class="app-store-btn" src="./images/appstore.svg" />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="app_preview">
+                <div class="btn_group_container">
+                    <button id="customerAppBtn" class="customerAppBtn active">Customer App</button>
+                    <button id="driverAppBtn" class="customerAppBtn">Driver App</button>
+                </div>
+                <img src="./images/Benefits.svg" id="customerImage" class="cab-service-image1 show" />
+                <img src="./images/Benefits1.svg" id="driverImage" class="cab-service-image1" />
+            </div>
+        </div>
+    </div>
+
+    <div class="container_main_preview_service" id="services_container">
+        <div class="main_container_preview_service">
+            <img src="./images/cab-service.svg" class="cab-service-image" />
+            <div class="tracking_container_service">
+                <h5 class="about_text">Services</h5>
+                <h1 class="main_desc_feature">Discover Our Cab Service</h1>
+                <h4 class="title_desc">Experience seamless rides with our trusted cab service, offering convenient
+                    booking, safe travels, and exceptional customer satisfaction.</h4>
+
+                <div class="tracking_container">
+
+                    <h4 class="download_title_desc"><img src="./images/check_circle_fill.svg"
+                            class="arrow_image" />Seamless transfers to and from the airport with reliable pickup and
+                        drop-off services.</h4>
+
+                    <h4 class="download_title_desc"><img src="./images/check_circle_fill.svg"
+                            class="arrow_image" />Explore the city's landmarks and attractions with guided tours in our
+                        comfortable cabs.
+                    </h4>
+
+                    <h4 class="download_title_desc"><img src="./images/check_circle_fill.svg"
+                            class="arrow_image" />Ensure punctual and professional transportation for business meetings
+                        and events.</h4>
+
+                    <h4 class="download_title_desc"><img src="./images/check_circle_fill.svg"
+                            class="arrow_image" />Arrive in style at weddings, parties, and other special events with
+                        our luxury cab services.</h4>
+
+                    <h4 class="download_title_desc"><img src="./images/check_circle_fill.svg" class="arrow_image" />Safe
+                        and comfortable transportation for medical appointments and hospital visits.</h4>
+
+                    <div class="google_btn">
+                        <img class="play-store-btn" src="./images/playstore.svg" />
+                        <img class="app-store-btn" src="./images/appstore.svg" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="about_mode_container">
+        <div class="mode_container">
+            <h5 class="about_text">Light and Dark Mode</h5>
+            <div class="mode_container_div">
+                <h1 class="main_desc">Enhanced Viewing: Light and Dark Mode Available!</h1>
+                <div class="modeText_container">
+                    <h5 class="about_text" id="modeText">Light Mode
+                    </h5>
+                    <label class="switch">
+                        <input type="checkbox" id="modeToggle">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+            <h4 class="title_desc">Tailor your app experience with the option to switch between light and dark modes
+                for
+                optimal viewing in any environment.</h4>
+        </div>
+        <!-- <img src="./images/mode-available.svg" alt="App Screens" class="responsive-image" /> -->
+        <img src="./images/mode-available.svg" alt="App Screens" class="responsive-image" id="modeImage" />
+    </div>
+
+
+    <!-- <div class="about_container" id="services_container">
+        <h5 class="about_text">Services</h5>
+        <h1 class="main_desc">Discover Our Cab Service</h1>
+        <h4 class="title_desc_service">Experience seamless rides with our trusted cab service, offering convenient
+            booking, safe
+            travels, and exceptional customer satisfaction.</h4>
+        <div class="service_card_container">
+            <div class="service_card">
+                <div class="service_card_box">
+                    <h2>Exploring the Town with Your Crew?</h2>
+                    <img src="./images/next_icon.png" />
+                </div>
+                <div class="service_card_box">
+                    <div class="service_card_box">
+                        <img src="./images/Cab.png" />
+                        <div class="arrived_container">
+                            <h5>Mini</h5>
+                            <p>we will arrived in 15 min</p>
+                        </div>
+                    </div>
+                    <div class="arrived_container_card">
+                        <h5>$10</h5>
+                        <div class="service_card_box">
+                            <img src="./images/Trailing Icon.png" />
+                            <h4 class="service_text">2</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="service_card">
+                <div class="service_card_box">
+                    <h2>Discovering the Cityscape with Your Friends?</h2>
+                    <img src="./images/next_icon.png" />
+                </div>
+                <div class="service_card_box">
+                    <div class="service_card_box">
+                        <img src="./images/Cab_suv.png" />
+                        <div class="arrived_container">
+                            <h5>Suden</h5>
+                            <p>we will arrived in 10 min</p>
+                        </div>
+                    </div>
+                    <div class="arrived_container_card">
+                        <h5>$10</h5>
+                        <div class="service_card_box">
+                            <img src="./images/Trailing Icon.png" />
+                            <h4 class="service_text">4</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="service_card_container">
+            <div class="service_card">
+                <div class="service_card_box">
+                    <h2>City Adventures Await - Ready to Roll?</h2>
+                    <img src="./images/next_icon.png" />
+                </div>
+                <div class="service_card_box">
+                    <div class="service_card_box">
+                        <img src="./images/Cab_suden.png" />
+                        <div class="arrived_container">
+                            <h5>Suv</h5>
+                            <p>we will arrived in 5 min</p>
+                        </div>
+                    </div>
+                    <div class="arrived_container_card">
+                        <h5>$15</h5>
+                        <div class="service_card_box">
+                            <img src="./images/Trailing Icon.png" />
+                            <h4 class="service_text">7</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="service_card">
+                <div class="service_card_box">
+                    <h2>Discovering City Charms with Your Crew?</h2>
+                    <img src="./images/next_icon.png" />
+                </div>
+                <div class="service_card_box">
+                    <div class="service_card_box">
+                        <img src="./images/Cab_muv.png" />
+                        <div class="arrived_container">
+                            <h5>Muv</h5>
+                            <p>we will arrived in 5 min</p>
+                        </div>
+                    </div>
+                    <div class="arrived_container_card">
+                        <h5>$20</h5>
+                        <div class="service_card_box">
+                            <img src="./images/Trailing Icon.png" />
+                            <h4 class="service_text">9</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="service_btn_container">
+            <a href="#" class="btn">View all&nbsp;<img src="./images/arrow_right_line.png" /></a>
+        </div>
+    </div> -->
+
+    <div class="about_container" id="feature_container">
+        <h5 class="about_text">Testimonials</h5>
+        <h1 class="main_desc">Hear What Our Customers Say</h1>
+        <h4 class="title_desc">Discover why our customers love our cab service. Read testimonials from satisfied riders.
+        </h4>
+        <div class="testimonial-container-main">
+            <div class="testimonial-card">
+                <img src="./images/customer_avatar.png" />
+                <h5 class="_main_title">Jerome Bell</h5>
+                <div class="rating_card">
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                </div>
+                <p class="rating_card">“I've been using My Taxi Taxi for my daily commute, and I'm always impressed by
+                    their prompt service.”</p>
+            </div>
+            <div class="testimonial-card">
+                <img src="./images/avtar_customer.png" />
+                <h5 class="rating_card_main_title">Robert Fox</h5>
+                <div class="rating_card">
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                </div>
+                <p class="rating_card">“I've been using My Taxi Taxi for my daily commute, and I'm always impressed by
+                    their prompt service.”</p>
+            </div>
+            <div class="testimonial-card">
+                <img src="./images/avtar.png" />
+                <h5 class="rating_card_main_title">Wade Warren</h5>
+                <div class="rating_card">
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                </div>
+                <p class="rating_card">“I've been using My Taxi Taxi for my daily commute, and I'm always impressed by
+                    their prompt service.”</p>
+            </div>
+            <div class="testimonial-card">
+                <img src="./images/avtar_customer.png" />
+                <h5 class="rating_card_main_title">Darrell Steward</h5>
+                <div class="rating_card">
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                </div>
+                <p class="rating_card">“I've been using My Taxi Taxi for my daily commute, and I'm always impressed by
+                    their prompt service.”</p>
+            </div>
+        </div>
+        <div class="testimonial-container">
+            <div class="testimonial-card">
+                <img src="./images/customer_avatar.png" />
+                <h5 class="_main_title">Jerome Bell</h5>
+                <div class="rating_card">
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                </div>
+                <p class="rating_card">“I've been using My Taxi Taxi for my daily commute, and I'm always impressed by
+                    their prompt service.”</p>
+            </div>
+            <div class="testimonial-card">
+                <img src="./images/customer_avatar.png" />
+                <h5 class="_main_title">Jerome Bell</h5>
+                <div class="rating_card">
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                </div>
+                <p class="rating_card">“I've been using My Taxi Taxi for my daily commute, and I'm always impressed by
+                    their prompt service.”</p>
+            </div>
+            <div class="testimonial-card">
+                <img src="./images/customer_avatar.png" />
+                <h5 class="_main_title">Jerome Bell</h5>
+                <div class="rating_card">
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                </div>
+                <p class="rating_card">“I've been using My Taxi Taxi for my daily commute, and I'm always impressed by
+                    their prompt service.”</p>
+            </div>
+            <div class="testimonial-card">
+                <img src="./images/avtar_customer.png" />
+                <h5 class="rating_card_main_title">Robert Fox</h5>
+                <div class="rating_card">
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                </div>
+                <p class="rating_card">“I've been using My Taxi Taxi for my daily commute, and I'm always impressed by
+                    their prompt service.”</p>
+            </div>
+            <div class="testimonial-card">
+                <img src="./images/avtar.png" />
+                <h5 class="rating_card_main_title">Wade Warren</h5>
+                <div class="rating_card">
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                    <img src="./images/rating_star.png" />
+                </div>
+                <p class="rating_card">“I've been using My Taxi Taxi for my daily commute, and I'm always impressed by
+                    their prompt service.”</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="download_container_main">
+        <div class="download_main_container">
+            <div class="tracking_container">
+                <h1 class="main_desc_feature">Download the My Taxi App Today</h1>
+
+                <h4 class="download_title_desc"><img src="./images/right_arrow.png" class="arrow_image" />Our
+                    user-friendly app allows you to book rides in seconds, track your driver in
+                    real-time, and enjoy secure payments.</h4>
+
+                <h4 class="download_title_desc"><img src="./images/right_arrow.png" class="arrow_image" />With 24/7
+                    customer support, your journey with My Taxi is always in good hands.
+                </h4>
+
+                <h4 class="download_title_desc"><img src="./images/right_arrow.png" class="arrow_image" />Download now
+                    and discover stress-free transportation</h4>
+                <div class="google_btn_download">
+                    <img class="play-store-download-btn" src="./images/playstore.svg" />
+                    <img class="app-store-download-btn" src="./images/appstore.svg" />
+                </div>
+                <!-- <div class="google_btn">
+                    <div class="btn_google">
+                        <img src="./images/google_play.png" />
+                        <div class="btn_desc">
+                            <div class="btn_desc_title">
+                                GET IT ON
+                            </div>
+                            <div class="btn_desc_subtitle">
+                                Google Play
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn_app_store">
+                        <img src="./images/app_store.png" />
+                        <div class="btn_desc">
+                            <div class="btn_desc_title">
+                                Download on the
+                            </div>
+                            <div class="btn_desc_subtitle">
+                                App Store
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <img src="./images/download_app_image.png" class="app_image" />
+        </div>
+    </div>
+
+    <div class="container_main" id="contact_container">
+        <div class="main_container_contact">
+            <div class="tracking_container">
+                <h5 class="about_text">Contact Us</h5>
+                <h1 class="main_desc_feature">Get in Touch with Us</h1>
+                <h4 class="title_desc">Fill out the form below and one of our representatives will get back to you as
+                    soon as possible.</h4>
+                <div class="tracking_container">
+                    <h4 class="download_title_desc"><img src="./images/location_image.png" class="arrow_image" />135,
+                        Golden Squre, near D-MART,<br>
+                        Mota Varachha,Surat, Gujarat 394105</h4>
+
+                    <h4 class="download_title_desc"><img src="./images/mail.png"
+                            class="arrow_image" />info@elaynetech.com
+                    </h4>
+
+                    <h4 class="download_title_desc"><img src="./images/call_center.png" class="arrow_image" />+91 99046
+                        97433</h4>
+                    <img src="./images/map.png" class="map_image" />
+                </div>
+            </div>
+            <div class="contact_form">
+                <form action="/action_page.php">
+                    <div class="container_contact_form">
+                        <div class="form_container">
+                            <label class="input_label" for="fname">First Name</label>
+                            <input class="input_container" type="text" id="fname" name="fname"
+                                placeholder="Enter first name"><br><br>
+                        </div>
+                        <div class="form_container_name">
+                            <label class="input_label" for="fname">Last Name</label>
+                            <input class="input_container" type="text" id="lname" name="lname"
+                                placeholder="Enter last name"><br><br>
+                        </div>
+                    </div>
+
+                    <div class="form_container_div">
+                        <label class="input_label" for="fname">Email</label>
+                        <input class="input_container" type="text" id="email" name="email"
+                            placeholder="Enter email"><br><br>
+                    </div>
+
+                    <div class="form_container_div">
+                        <label class="input_label" for="fname">Mobile numbr</label>
+                        <input class="input_container" type="text" id="mobilenumber" name="mobilenumber"
+                            placeholder="Enter mobile number"><br><br>
+                    </div>
+
+                    <div class="form_container_div">
+                        <label class="input_label" for="fname">Message</label>
+                        <textarea class="input_container_msg" id="message" name="message" placeholder="Enter message"
+                            rows="4"></textarea>
+                        <br><br>
+                    </div>
+
+                    <div class="contact_btn_container">
+                        <a href="#" class="btn_submit">submit</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer_container_main">
+        <div class="footer_main_container">
+            <div class="testimonial-container-footer">
+                <div class="testimonial-card-footer">
+                    <img src="./images/footer-logo.svg" />
+                    <p class="rating_card">Elevate your travel experience with our<br> intuitive cab booking app.</p>
+                    <div class="footer_logos">
+                        <img src="./images/Facebook.png" />
+                        <img src="./images/Whatsapp.png" />
+                        <img src="./images/Linkdin.png" />
+                        <img src="./images/Instagram.png" />
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-container-footer">
+                <div class="testimonial-card-footer">
+                    <p class="rating_card_title">Quick Links</p>
+                    <p class="rating_card">Home</p>
+                    <p class="rating_card">About Us</p>
+                    <p class="rating_card">Features</p>
+                    <p class="rating_card">Services</p>
+                    <p class="rating_card">Contact</p>
+                </div>
+            </div>
+            <div class="testimonial-container-footer">
+                <div class="testimonial-card-footer">
+                    <p class="rating_card_title">Services</p>
+                    <p class="rating_card">Mini</p>
+                    <p class="rating_card">Suden</p>
+                    <p class="rating_card">Muv</p>
+                    <p class="rating_card">Suv</p>
+                </div>
+            </div>
+            <div class="testimonial-container-footer">
+                <div class="testimonial-card-footer">
+                    <p class="rating_card_title">Connect with us</p>
+                    <div class="main_container_footer">
+                        <img src="./images/footer_location.png" />&nbsp;&nbsp;
+                        <p class="rating_card">135, Golden Squre, near D-MART,<br>
+                            Mota Varachha,Surat, Gujarat 394105</p>
+                    </div>
+                    <div class="main_container_footer">
+                        <img src="./images/footer_call.png" />&nbsp;&nbsp;
+                        <p class="rating_card">+91 99046 97433</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer_container_main">
+        <hr>
+    </div>
+    <!-- <div class="footer_container_main">
+        <div class="footer_main_container">
+            <hr style="width:100%;text-align:left;margin-left:0;color: #ffffff">
+        </div>
+    </div> -->
+    <div class="footer_container_main">
+        <div class="footer_main_container">
+            <div class="testimonial-footer">
+                <div class="testimonial-card-footer">
+                    <p class="rating_card">Copyright © 2024 My Taxi All Rights Reserved.</p>
+                </div>
+            </div>
+            <div class="footer-desc">
+                <div class="testimonial-condition-footer">
+                    <a href="privacy-policy.html" class="rating_card">Privacy Policy</a>
+                    <div class="vl"></div>
+                    <a href="privacy-policy.html" class="rating_card">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function toggleNav() {
+            var navLinks = document.querySelector('.nav-links');
+            var btnContainer = document.querySelector('.btn_container');
+            var iconContainer = document.querySelector('.image_icon');
+            var toggleBtn = document.querySelector('.nav-toggle-btn');
+
+            navLinks.classList.toggle('show');
+            btnContainer.classList.toggle('show');
+            iconContainer.classList.toggle('show');
+
+            // Toggle button text between "Menu" and "Close"
+            if (toggleBtn.textContent === "Menu") {
+                toggleBtn.textContent = "Close";
+            } else {
+                toggleBtn.textContent = "Menu";
+            }
+        }
+
+        function openNav() {
+            document.getElementById("mySidenav").style.height = "30%";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.height = "0";
+        }
+
+        function scrollToSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Function to toggle between light and dark mode
+        document.getElementById('modeToggle').addEventListener('change', function () {
+            document.body.classList.toggle('dark-mode');
+
+            // Change image source based on the mode
+            var image = document.getElementById('modeImage');
+            if (document.body.classList.contains('dark-mode')) {
+                modeText.textContent = 'Dark Mode';
+                image.src = './images/dark-mode.svg';
+            } else {
+                modeText.textContent = 'Light Mode';
+                image.src = './images/mode-available.svg';
+            }
+        });
+
+        document.getElementById('customerAppBtn').addEventListener('click', function () {
+            var customerImage = document.getElementById('customerImage');
+            var driverImage = document.getElementById('driverImage');
+            var customerContent = document.getElementById('customerContent');
+            var driverContent = document.getElementById('driverContent');
+
+            customerImage.classList.add('show');
+            driverImage.classList.remove('show');
+            customerContent.style.display = 'block';
+            driverContent.style.display = 'none';
+
+            // Update button background colors
+            this.classList.add('active');
+            document.getElementById('driverAppBtn').classList.remove('active');
+        });
+
+        document.getElementById('driverAppBtn').addEventListener('click', function () {
+            var customerImage = document.getElementById('customerImage');
+            var driverImage = document.getElementById('driverImage');
+            var customerContent = document.getElementById('customerContent');
+            var driverContent = document.getElementById('driverContent');
+
+            driverImage.classList.add('show');
+            customerImage.classList.remove('show');
+            driverContent.style.display = 'block';
+            customerContent.style.display = 'none';
+
+            // Update button background colors
+            this.classList.add('active');
+            document.getElementById('customerAppBtn').classList.remove('active');
+        });
+
+
+
+
+    </script>
+
+</body>
+
+</html>
