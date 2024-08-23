@@ -11,6 +11,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Print working directory
+        run: pwd
+      - name: List files
+        run: ls -la
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-action@4.0.0
         with:
