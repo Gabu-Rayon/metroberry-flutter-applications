@@ -2,7 +2,7 @@ name: Metroberry Mobile Applications
 
 on:
   push:
-    branches: [ "serverChanges" ]
+    branches: ["serverChanges"]
   workflow_dispatch:
 
 jobs:
@@ -10,7 +10,7 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
 
-    steps:    
+    steps:
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-action@4.0.0
         with:
