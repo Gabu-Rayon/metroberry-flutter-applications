@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <title>MyTaxi</title>
+  <meta name="description" content="Your Fast Track to City Exploration">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="admin">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>admin</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <script>
+    // The value below is injected by flutter build, do not touch.
+    const serviceWorkerVersion = null;
+  </script>
+  <!-- This script adds the flutter initialization JS code -->
+  <script src="flutter.js" defer></script>
+<!--  <script type="text/javascript">-->
+<!--    window.flutterWebRenderer = "html";-->
+<!--  </script>-->
+  <script
+          type="application/javascript"
+          src="/assets/packages/flutter_inappwebview_web/assets/web/web_support.js"
+          defer>
+
+  </script>
+ </head>
+  <body>
+  <!-- Preloader -->
+  <div class="preloader">
+      <img width="300" src="assets/img/cab_animation.gif" class="animation-image" alt="" />
+  </div>
+  <!-- Script Goes Here -->
+  <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        var images = document.querySelectorAll(".animation-image");
+        var currentIndex = 0;
+        function cycleImages() {
+            var currentImage = images[currentIndex];
+            var nextIndex = (currentIndex + 1) % images.length;
+            var nextImage = images[nextIndex];
+            currentImage.style.display = "none";
+            nextImage.style.display = "block";
+            currentIndex = nextIndex;
+        }
+        // Set an interval to call the cycleImages function every 3 seconds
+        setInterval(cycleImages, 1000);
+        });
+  </script>
+
+  <script>
+      window.addEventListener('load', function(ev) {
+        // Download main.dart.js
+        _flutter.loader.loadEntrypoint({
+          serviceWorker: {
+            serviceWorkerVersion: serviceWorkerVersion,
+          },
+          onEntrypointLoaded: function(engineInitializer) {
+            engineInitializer.initializeEngine().then(function(appRunner) {
+              appRunner.runApp();
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

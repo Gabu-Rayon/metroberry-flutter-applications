@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="web/css/styles.css" />
+    <link rel="icon" href="web/images/main-icon.png" type="image/x-icon" />
+    <title>MetroBerry - Be Spoken</title>
+</head>
+
+<body>
+    <div id="mySidenav" class="sidenav">
+        <div class="sidenav_container">
+            <img src="web/images/main-icon.png" />
+            <img src="web/images/close_line.png" class="closebtn" onclick="closeNav()" />
+        </div>
+        <a href="#" onclick="scrollToSection('about_container')">About Us</a>
+        <a href="#" onclick="scrollToSection('services_container')">Services</a>
+        <a href="#" onclick="scrollToSection('feature_container')">Features</a>
+        <a href="#" onclick="scrollToSection('contact_container')">Contact Us</a>
+    </div>
+
+    <div class="topbar">
+        <div class="container">
+            <img src="web/images/main-icon.png" class="image_icon" style="width: 150px; object-fit: contain" />
+            <ul class="nav-links">
+                <li>
+                    <a href="#" onclick="scrollToSection('about_container')">About Us</a>
+                </li>
+                <li>
+                    <a href="#" onclick="scrollToSection('services_container')">Services</a>
+                </li>
+                <li>
+                    <a href="#" onclick="scrollToSection('feature_container')">Features</a>
+                </li>
+                <li>
+                    <a href="#" onclick="scrollToSection('contact_container')">Contact Us</a>
+                </li>
+            </ul>
+            <!-- <div class="btn_container">
+                <a href="#" class="btn_download"><img src="web/images/download_line.png" />&nbsp;Download App</a>
+                <a href="#" class="btn">Login</a>
+            </div> -->
+        </div>
+        <div class="menu_btn">
+            <!-- <button class="nav-toggle-btn" onclick="openNav()">Menu</button> -->
+            <img src="web/images/menu_line.png" alt="menu" onclick="openNav()" class="nav-toggle-btn" />
+            <!-- <span class="nav-toggle-btn" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span> -->
+        </div>
+    </div>
+
+    <div class="container_desc">
+        <div class="main_container">
+            <div class="tracking_container">
+                <a href="#" class="btn_tracking"><img src="web/images/location.svg" />&nbsp;Real time GPS
+                    Tracking</a>
+                <h1 class="main_desc">
+                    Corporate Taxi Services with MetroBerry
+                    <span class="text_color">MetroBerry</span>
+                </h1>
+                <h4 class="title_desc">
+                    Experience seamless corporate travel with MetroBerry, your reliable
+                    cororate taxi service partner.
+                </h4>
+                <div class="google_btn">
+                    <img class="play-store-btn" src="web/images/playstore.svg" />
+                    <img class="app-store-btn" src="web/images/appstore.svg" />
+                </div>
+            </div>
+            <img src="web/images/mockup.svg" class="mobile_image" />
+        </div>
+    </div>
+
+    <div class="about_container" id="about_container">
+        <h5 class="about_text">About Us</h5>
+        <h1 class="main_desc">Your reliable Corporate Taxi Solution</h1>
+        <h4 class="title_desc">
+            Learn about our journey and dedication to offering effortless,
+            dependable, and efficient transport solutions tailored to every aspect
+            of your travel requirements.
+        </h4>
+
+        <div class="card_container">
+            <div class="card">
+                <img src="web/images/service.png" />
+                <h4>Reliable Service</h4>
+                <p>
+                    Ensure users that MetroBerry provides reliable transportation
+                    services, with safe rides to their destinations
+                </p>
+            </div>
+            <div class="card">
+                <img src="web/images/safety.png" />
+                <h4>Safety and Security</h4>
+                <p>
+                    Assure users of MetroBerry's commitment to safety, real-time ride
+                    tracking, and secure payment options
+                </p>
+            </div>
+            <div class="card">
+                <img src="web/images/review.png" />
+                <h4>Driver Ratings and Reviews</h4>
+                <p>
+                    Ability for users to rate and review drivers, ensuring
+                    accountability and quality service
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="feature_container">
+        <h5 class="about_text">Key Features</h5>
+        <h3 class="main_desc_feature">
+            Experience the Difference with Our Innovative Features
+        </h3>
+        <h4 class="title_desc">
+            Unlock the convenience of seamless booking, real-time tracking, secure
+            payments, and round-the-clock support with MetroBerry's essential
+            features.
+        </h4>
+
+        <div class="image_container">
+            <div class="card_image">
+                <img src="web/images/Feature 1.png" alt="Feature 1" />
+            </div>
+            <div class="card_image">
+                <img src="web/images/Feature 3.png" alt="Feature 3" />
+            </div>
+            <div class="card_image">
+                <img src="web/images/Feature 2.png" alt="Feature 2" />
+            </div>
+        </div>
+    </div>
+
+    <div class="about_container" id="about_container">
+        <h5 class="about_text">How it works</h5>
+        <h1 class="main_desc">Effortless Ride Booking in 3 Steps</h1>
+        <h4 class="title_desc">Simple Steps to Seamless Rides</h4>
+
+        <div class="card_container_booking">
+            <div class="card_booking">
+                <h1>Book</h1>
+                <p>Choose your ride and location.</p>
+                <img src="web/images/choice-trip.svg" class="booking-image" />
+                <div class="card_booking_btn">Learn more</div>
+            </div>
+            <div class="card_booking">
+                <h1>Track</h1>
+                <p>Follow your driver's arrival in real-time.</p>
+                <img src="web/images/track-image.svg" class="booking-image" />
+                <div class="card_booking_btn">Learn more</div>
+            </div>
+            <div class="card_booking">
+                <h1>Ride</h1>
+                <p>Enjoy a safe journey to your destination.</p>
+                <img src="web/images/ride-map.svg" class="booking-image" />
+                <div class="card_booking_btn">Learn more</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container_main_support">
+        <div class="main_container_support">
+            <img src="web/images/multi_language_support.png" class="mobile_image" />
+            <div class="tracking_container">
+                <h5 class="about_text">RTL & LTR</h5>
+                <h1 class="main_desc_feature">Multiple Language Support</h1>
+                <h4 class="title_desc">
+                    connect with customers worldwide with our seamless multilingual
+                    support
+                </h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="container_main_preview">
+        <div class="main_container_preview">
+            <div class="tracking_container">
+                <h5 class="about_text">App Preview</h5>
+
+                <div id="customerContent" class="customer_content">
+                    <h1 class="main_desc_feature">
+                        Get a Sneak Peek: View Our App Preview!
+                    </h1>
+                    <h4 class="title_desc">
+                        Explore the intuitive interfaces and powerful features of our
+                        driver and customer apps before you ride!
+                    </h4>
+
+                    <div class="tracking_container">
+                        <h4 class="download_title_desc">
+                            <img src="web/images/check_circle_fill.svg" class="arrow_image" />Seamless ride
+                            booking with multiple vehicle options
+                        </h4>
+
+                        <h4 class="download_title_desc">
+                            <img src="web/images/check_circle_fill.svg" class="arrow_image" />Live tracking for
+                            monitoring ride progress.
+                        </h4>
+
+                        <h4 class="download_title_desc">
+                            <img src="web/images/check_circle_fill.svg" class="arrow_image" />Secure payment
+                            options with wallet integration.
+                        </h4>
+
+                        <h4 class="download_title_desc">
+                            <img src="web/images/check_circle_fill.svg" class="arrow_image" />Driver rating and
+                            feedback system.
+                        </h4>
+
+                        <h4 class="download_title_desc">
+                            <img src="web/images/check_circle_fill.svg" class="arrow_image" />Push
+                            notifications for ride updates and promotions.
+                        </h4>
+
+                        <div class="google_btn">
+                            <img class="play-store-btn" src="web/images/playstore.svg" />
+                            <img class="app-store-btn" src="web/images/appstore.svg" />
+                        </div>
+                    </div>
+                </div>
+
+                <div id="driverContent" class="driver_content" style="display: none">
+                    <h1 class="main_desc_feature">
+                        Get a Sneak Peek: View Our App Preview!
+                    </h1>
+                    <h4 class="title_desc">
+                        Explore the intuitive interfaces and powerful features of our
+                        driver and customer apps before you ride!
+                    </h4>
+
+                    <div class="tracking_container">
+                        <h4 class="download_title_desc">
+                            <img src="web/images/check_circle_fill.svg" class="arrow_image" />Real-time ride
+                            notifications.
+                        </h4>
+
+                        <h4 class="download_title_desc">
+                            <img src="web/images/check_circle_fill.svg" class="arrow_image" />GPS navigation
+                            for efficient routes.
+                        </h4>
+
+                        <h4 class="download_title_desc">
+                            <img src="web/images/check_circle_fill.svg" class="arrow_image" />Earnings tracking
+                            and withdrawal options.
+                        </h4>
+
+                        <h4 class="download_title_desc">
+                            <img src="web/images/check_circle_fill.svg" class="arrow_image" />In-app chat for
+                            communication with passengers.
+                        </h4>
+
+                        <h4 class="download_title_desc">
+                            <img src="web/images/check_circle_fill.svg" class="arrow_image" />Availability
+                            toggle for managing work hours.
+                        </h4>
+
+                        <div class="google_btn">
+                            <img class="play-store-btn" src="web/images/playstore.svg" />
+                            <img class="app-store-btn" src="web/images/appstore.svg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="app_preview">
+                <div class="btn_group_container">
+                    <button id="customerAppBtn" class="customerAppBtn active">
+                        Customer App
+                    </button>
+                    <button id="driverAppBtn" class="customerAppBtn">Driver App</button>
+                </div>
+                <img src="web/images/Benefits.svg" id="customerImage" class="cab-service-image1 show" />
+                <img src="web/images/Benefits1.svg" id="driverImage" class="cab-service-image1" />
+            </div>
+        </div>
+    </div>
+
+    <div class="container_main_preview_service" id="services_container">
+        <div class="main_container_preview_service">
+            <img src="web/images/cab-service.svg" class="cab-service-image" />
+            <div class="tracking_container_service">
+                <h5 class="about_text">Services</h5>
+                <h1 class="main_desc_feature">Discover Our Cab Service</h1>
+                <h4 class="title_desc">
+                    Experience seamless rides with our trusted cab service, offering
+                    convenient booking, safe travels, and exceptional customer
+                    satisfaction.
+                </h4>
+
+                <div class="tracking_container">
+                    <h4 class="download_title_desc">
+                        <img src="web/images/check_circle_fill.svg" class="arrow_image" />Seamless transfers to
+                        and from the airport with reliable pickup
+                        and drop-off services.
+                    </h4>
+
+                    <h4 class="download_title_desc">
+                        <img src="web/images/check_circle_fill.svg" class="arrow_image" />Explore the city's
+                        landmarks and attractions with guided tours
+                        in our comfortable cabs.
+                    </h4>
+
+                    <h4 class="download_title_desc">
+                        <img src="web/images/check_circle_fill.svg" class="arrow_image" />Ensure punctual and
+                        professional transportation for business
+                        meetings and events.
+                    </h4>
+
+                    <h4 class="download_title_desc">
+                        <img src="web/images/check_circle_fill.svg" class="arrow_image" />Arrive in style at
+                        weddings, parties, and other special events
+                        with our luxury cab services.
+                    </h4>
+
+                    <h4 class="download_title_desc">
+                        <img src="web/images/check_circle_fill.svg" class="arrow_image" />Safe and comfortable
+                        transportation for medical appointments and
+                        hospital visits.
+                    </h4>
+
+                    <div class="google_btn">
+                        <img class="play-store-btn" src="web/images/playstore.svg" />
+                        <img class="app-store-btn" src="web/images/appstore.svg" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="about_mode_container">
+        <div class="mode_container">
+            <h5 class="about_text">Light and Dark Mode</h5>
+            <div class="mode_container_div">
+                <h1 class="main_desc">
+                    Enhanced Viewing: Light and Dark Mode Available!
+                </h1>
+                <div class="modeText_container">
+                    <h5 class="about_text" id="modeText">Light Mode</h5>
+                    <label class="switch">
+                        <input type="checkbox" id="modeToggle" />
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+            <h4 class="title_desc">
+                Tailor your app experience with the option to switch between light and
+                dark modes for optimal viewing in any environment.
+            </h4>
+        </div>
+        <!-- <img src="web/images/mode-available.svg" alt="App Screens" class="responsive-image" /> -->
+        <img src="web/images/mode-available.svg" alt="App Screens" class="responsive-image" id="modeImage" />
+    </div>
+
+    <!-- <div class="about_container" id="services_container">
+        <h5 class="about_text">Services</h5>
+        <h1 class="main_desc">Discover Our Cab Service</h1>
+        <h4 class="title_desc_service">Experience seamless rides with our trusted cab service, offering convenient
+            booking, safe
+            travels, and exceptional customer satisfaction.</h4>
+        <div class="service_card_container">
+            <div class="service_card">
+                <div class="service_card_box">
+                    <h2>Exploring the Town with Your Crew?</h2>
+                    <img src="web/images/next_icon.png" />
+                </div>
+                <div class="service_card_box">
+                    <div class="service_card_box">
+                        <img src="web/images/Cab.png" />
+                        <div class="arrived_container">
+                            <h5>Mini</h5>
+                            <p>we will arrived in 15 min</p>
+                        </div>
+                    </div>
+                    <div class="arrived_container_card">
+                        <h5>$10</h5>
+                        <div class="service_card_box">
+                            <img src="web/images/Trailing Icon.png" />
+                            <h4 class="service_text">2</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="service_card">
+                <div class="service_card_box">
+                    <h2>Discovering the Cityscape with Your Friends?</h2>
+                    <img src="web/images/next_icon.png" />
+                </div>
+                <div class="service_card_box">
+                    <div class="service_card_box">
+                        <img src="web/images/Cab_suv.png" />
+                        <div class="arrived_container">
+                            <h5>Suden</h5>
+                            <p>we will arrived in 10 min</p>
+                        </div>
+                    </div>
+                    <div class="arrived_container_card">
+                        <h5>$10</h5>
+                        <div class="service_card_box">
+                            <img src="web/images/Trailing Icon.png" />
+                            <h4 class="service_text">4</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="service_card_container">
+            <div class="service_card">
+                <div class="service_card_box">
+                    <h2>City Adventures Await - Ready to Roll?</h2>
+                    <img src="web/images/next_icon.png" />
+                </div>
+                <div class="service_card_box">
+                    <div class="service_card_box">
+                        <img src="web/images/Cab_suden.png" />
+                        <div class="arrived_container">
+                            <h5>Suv</h5>
+                            <p>we will arrived in 5 min</p>
+                        </div>
+                    </div>
+                    <div class="arrived_container_card">
+                        <h5>$15</h5>
+                        <div class="service_card_box">
+                            <img src="web/images/Trailing Icon.png" />
+                            <h4 class="service_text">7</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="service_card">
+                <div class="service_card_box">
+                    <h2>Discovering City Charms with Your Crew?</h2>
+                    <img src="web/images/next_icon.png" />
+                </div>
+                <div class="service_card_box">
+                    <div class="service_card_box">
+                        <img src="web/images/Cab_muv.png" />
+                        <div class="arrived_container">
+                            <h5>Muv</h5>
+                            <p>we will arrived in 5 min</p>
+                        </div>
+                    </div>
+                    <div class="arrived_container_card">
+                        <h5>$20</h5>
+                        <div class="service_card_box">
+                            <img src="web/images/Trailing Icon.png" />
+                            <h4 class="service_text">9</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="service_btn_container">
+            <a href="#" class="btn">View all&nbsp;<img src="web/images/arrow_right_line.png" /></a>
+        </div>
+    </div> -->
+
+    <div class="about_container" id="feature_container">
+        <h5 class="about_text">Testimonials</h5>
+        <h1 class="main_desc">Hear What Our Customers Say</h1>
+        <h4 class="title_desc">
+            Discover why our customers love our cab service. Read testimonials from
+            satisfied riders.
+        </h4>
+        <div class="testimonial-container-main">
+            <div class="testimonial-card">
+                <img src="web/images/customer_avatar.png" />
+                <h5 class="_main_title">Jerome Bell</h5>
+                <div class="rating_card">
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                </div>
+                <p class="rating_card">
+                    “I've been using MetroBerry Taxi for my daily commute, and I'm
+                    always impressed by their prompt service.”
+                </p>
+            </div>
+            <div class="testimonial-card">
+                <img src="web/images/avtar_customer.png" />
+                <h5 class="rating_card_main_title">Robert Fox</h5>
+                <div class="rating_card">
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                </div>
+                <p class="rating_card">
+                    “I've been using MetroBerry Taxi for my daily commute, and I'm
+                    always impressed by their prompt service.”
+                </p>
+            </div>
+            <div class="testimonial-card">
+                <img src="web/images/avtar.png" />
+                <h5 class="rating_card_main_title">Wade Warren</h5>
+                <div class="rating_card">
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                </div>
+                <p class="rating_card">
+                    “I've been using MetroBerry Taxi for my daily commute, and I'm
+                    always impressed by their prompt service.”
+                </p>
+            </div>
+            <div class="testimonial-card">
+                <img src="web/images/avtar_customer.png" />
+                <h5 class="rating_card_main_title">Darrell Steward</h5>
+                <div class="rating_card">
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                </div>
+                <p class="rating_card">
+                    “I've been using MetroBerry Taxi for my daily commute, and I'm
+                    always impressed by their prompt service.”
+                </p>
+            </div>
+        </div>
+        <div class="testimonial-container">
+            <div class="testimonial-card">
+                <img src="web/images/customer_avatar.png" />
+                <h5 class="_main_title">Jerome Bell</h5>
+                <div class="rating_card">
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                </div>
+                <p class="rating_card">
+                    “I've been using MetroBerry Taxi for my daily commute, and I'm
+                    always impressed by their prompt service.”
+                </p>
+            </div>
+            <div class="testimonial-card">
+                <img src="web/images/customer_avatar.png" />
+                <h5 class="_main_title">Jerome Bell</h5>
+                <div class="rating_card">
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                </div>
+                <p class="rating_card">
+                    “I've been using MetroBerry Taxi for my daily commute, and I'm
+                    always impressed by their prompt service.”
+                </p>
+            </div>
+            <div class="testimonial-card">
+                <img src="web/images/customer_avatar.png" />
+                <h5 class="_main_title">Jerome Bell</h5>
+                <div class="rating_card">
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                </div>
+                <p class="rating_card">
+                    “I've been using MetroBerry Taxi for my daily commute, and I'm
+                    always impressed by their prompt service.”
+                </p>
+            </div>
+            <div class="testimonial-card">
+                <img src="web/images/avtar_customer.png" />
+                <h5 class="rating_card_main_title">Robert Fox</h5>
+                <div class="rating_card">
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                </div>
+                <p class="rating_card">
+                    “I've been using MetroBerry Taxi for my daily commute, and I'm
+                    always impressed by their prompt service.”
+                </p>
+            </div>
+            <div class="testimonial-card">
+                <img src="web/images/avtar.png" />
+                <h5 class="rating_card_main_title">Wade Warren</h5>
+                <div class="rating_card">
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                    <img src="web/images/rating_star.png" />
+                </div>
+                <p class="rating_card">
+                    “I've been using MetroBerry Taxi for my daily commute, and I'm
+                    always impressed by their prompt service.”
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="download_container_main">
+        <div class="download_main_container">
+            <div class="tracking_container">
+                <h1 class="main_desc_feature">Download the MetroBerry App Today</h1>
+
+                <h4 class="download_title_desc">
+                    <img src="web/images/right_arrow.png" class="arrow_image" />Our
+                    user-friendly app allows you to book rides in seconds, track your
+                    driver in real-time, and enjoy secure payments.
+                </h4>
+
+                <h4 class="download_title_desc">
+                    <img src="web/images/right_arrow.png" class="arrow_image" />With 24/7
+                    customer support, your journey with MetroBerry is always in good
+                    hands.
+                </h4>
+
+                <h4 class="download_title_desc">
+                    <img src="web/images/right_arrow.png" class="arrow_image" />Download
+                    now and discover stress-free transportation
+                </h4>
+                <div class="google_btn_download">
+                    <img class="play-store-download-btn" src="web/images/playstore.svg" />
+                    <img class="app-store-download-btn" src="web/images/appstore.svg" />
+                </div>
+                <!-- <div class="google_btn">
+                    <div class="btn_google">
+                        <img src="web/images/google_play.png" />
+                        <div class="btn_desc">
+                            <div class="btn_desc_title">
+                                GET IT ON
+                            </div>
+                            <div class="btn_desc_subtitle">
+                                Google Play
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn_app_store">
+                        <img src="web/images/app_store.png" />
+                        <div class="btn_desc">
+                            <div class="btn_desc_title">
+                                Download on the
+                            </div>
+                            <div class="btn_desc_subtitle">
+                                App Store
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <img src="web/images/download_app_image.png" class="app_image" />
+        </div>
+    </div>
+
+    <div class="container_main" id="contact_container">
+        <div class="main_container_contact">
+            <div class="tracking_container">
+                <h5 class="about_text">Contact Us</h5>
+                <h1 class="main_desc_feature">Get in Touch with Us</h1>
+                <h4 class="title_desc">
+                    Fill out the form below and one of our representatives will get back
+                    to you as soon as possible.
+                </h4>
+                <div class="tracking_container">
+                    <h4 class="download_title_desc">
+                        <img src="web/images/location_image.png" class="arrow_image" />
+                        Paresia building, Kahawa sukari, ground floor A1 <br />
+                        P.o Box 16554 - 00100,Nairobi.<br />
+                    </h4>
+                    <h4 class="download_title_desc">
+                        <img src="web/images/mail.png" class="arrow_image" />thomasobrian013@gmail.com
+                    </h4>
+                    <h4 class="download_title_desc">
+                        <img src="web/images/call_center.png" class="arrow_image" />+254
+                        748 156366 / +254 104 156366.
+                    </h4>
+                    <img src="web/images/map.png" class="map_image" />
+                </div>
+            </div>
+            <div class="contact_form">
+                <form action="/action_page.php">
+                    <div class="container_contact_form">
+                        <div class="form_container">
+                            <label class="input_label" for="fname">First Name</label>
+                            <input class="input_container" type="text" id="fname" name="fname"
+                                placeholder="Enter first name" /><br /><br />
+                        </div>
+                        <div class="form_container_name">
+                            <label class="input_label" for="fname">Last Name</label>
+                            <input class="input_container" type="text" id="lname" name="lname"
+                                placeholder="Enter last name" /><br /><br />
+                        </div>
+                    </div>
+
+                    <div class="form_container_div">
+                        <label class="input_label" for="fname">Email</label>
+                        <input class="input_container" type="text" id="email" name="email"
+                            placeholder="Enter email" /><br /><br />
+                    </div>
+
+                    <div class="form_container_div">
+                        <label class="input_label" for="fname">Mobile number</label>
+                        <input class="input_container" type="text" id="mobilenumber" name="mobilenumber"
+                            placeholder="Enter mobile number" /><br /><br />
+                    </div>
+
+                    <div class="form_container_div">
+                        <label class="input_label" for="fname">Message</label>
+                        <textarea class="input_container_msg" id="message" name="message" placeholder="Enter message"
+                            rows="4"></textarea>
+                        <br /><br />
+                    </div>
+
+                    <div class="contact_btn_container">
+                        <a href="#" class="btn_submit">submit</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer_container_main" style="background-color: #c7100a">
+        <div class="footer_main_container" style="background-color: #c7100a">
+            <div class="testimonial-container-footer">
+                <div class="testimonial-card-footer">
+                    <img src="web/images/main-icon.png" style="width: 150px; object-fit: contain" />
+                    <p class="rating_card">
+                        Elevate your travel experience with our<br />
+                        intuitive cab booking app.
+                    </p>
+                    <div class="footer_logos">
+                        <img src="web/images/Facebook.png" />
+                        <img src="web/images/Whatsapp.png" />
+                        <img src="web/images/Linkdin.png" />
+                        <img src="web/images/Instagram.png" />
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-container-footer">
+                <div class="testimonial-card-footer">
+                    <p class="rating_card_title">Quick Links</p>
+                    <p class="rating_card">Home</p>
+                    <p class="rating_card">About Us</p>
+                    <p class="rating_card">Features</p>
+                    <p class="rating_card">Services</p>
+                    <p class="rating_card">Contact</p>
+                </div>
+            </div>
+            <div class="testimonial-container-footer">
+                <div class="testimonial-card-footer">
+                    <p class="rating_card_title">Services</p>
+                    <p class="rating_card">Mini</p>
+                    <p class="rating_card">Suden</p>
+                    <p class="rating_card">Muv</p>
+                    <p class="rating_card">Suv</p>
+                </div>
+            </div>
+            <div class="testimonial-container-footer">
+                <div class="testimonial-card-footer">
+                    <p class="rating_card_title">Connect with us</p>
+                    <div class="main_container_footer">
+                        <img src="web/images/footer_location.png" />&nbsp;&nbsp;
+                        <p class="rating_card">
+                            Paresia building, Kahawa sukari, ground floor A1 <br />
+                            P.o Box 16554 - 00100,Nairobi.<br />
+                        </p>
+                    </div>
+                    <div class="main_container_footer">
+                        <img src="web/images/footer_call.png" />&nbsp;&nbsp;
+                        <p class="rating_card">+254
+                            748 156366 / +254 104 156366.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer_container_main">
+        <hr />
+        <div class="footer_main_container">
+        </div>
+        <!-- <div class="footer_container_main">
+        <div class="footer_main_container">
+            <hr style="width:100%;text-align:left;margin-left:0;color: #ffffff">
+        </div>
+    </div> -->
+        <div class="footer_container_main">
+            <div class="testimonial-footer">
+                <div class="testimonial-card-footer">
+                    <p class="rating_card">
+                        Copyright © 2024 MetroBerry All Rights Reserved.
+                    </p>
+                </div>
+            </div>
+            <div class="footer-desc">
+                <div class="testimonial-condition-footer">
+                    <a href="privacy-policy.html" class="rating_card">Privacy Policy</a>
+                    <div class="vl"></div>
+                    <a href="privacy-policy.html" class="rating_card">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleNav() {
+            var navLinks = document.querySelector(".nav-links");
+            var btnContainer = document.querySelector(".btn_container");
+            var iconContainer = document.querySelector(".image_icon");
+            var toggleBtn = document.querySelector(".nav-toggle-btn");
+
+            navLinks.classList.toggle("show");
+            btnContainer.classList.toggle("show");
+            iconContainer.classList.toggle("show");
+
+            // Toggle button text between "Menu" and "Close"
+            if (toggleBtn.textContent === "Menu") {
+                toggleBtn.textContent = "Close";
+            } else {
+                toggleBtn.textContent = "Menu";
+            }
+        }
+
+        function openNav() {
+            document.getElementById("mySidenav").style.height = "30%";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.height = "0";
+        }
+
+        function scrollToSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+
+        // Function to toggle between light and dark mode
+        document
+            .getElementById("modeToggle")
+            .addEventListener("change", function () {
+                document.body.classList.toggle("dark-mode");
+
+                // Change image source based on the mode
+                var image = document.getElementById("modeImage");
+                if (document.body.classList.contains("dark-mode")) {
+                    modeText.textContent = "Dark Mode";
+                    image.src = "web/images/dark-mode.svg";
+                } else {
+                    modeText.textContent = "Light Mode";
+                    image.src = "web/images/mode-available.svg";
+                }
+            });
+
+        document
+            .getElementById("customerAppBtn")
+            .addEventListener("click", function () {
+                var customerImage = document.getElementById("customerImage");
+                var driverImage = document.getElementById("driverImage");
+                var customerContent = document.getElementById("customerContent");
+                var driverContent = document.getElementById("driverContent");
+
+                customerImage.classList.add("show");
+                driverImage.classList.remove("show");
+                customerContent.style.display = "block";
+                driverContent.style.display = "none";
+
+                // Update button background colors
+                this.classList.add("active");
+                document.getElementById("driverAppBtn").classList.remove("active");
+            });
+
+        document
+            .getElementById("driverAppBtn")
+            .addEventListener("click", function () {
+                var customerImage = document.getElementById("customerImage");
+                var driverImage = document.getElementById("driverImage");
+                var customerContent = document.getElementById("customerContent");
+                var driverContent = document.getElementById("driverContent");
+
+                driverImage.classList.add("show");
+                customerImage.classList.remove("show");
+                driverContent.style.display = "block";
+                customerContent.style.display = "none";
+
+                // Update button background colors
+                this.classList.add("active");
+                document.getElementById("customerAppBtn").classList.remove("active");
+            });
+    </script>
+</body>
+
+</html>
