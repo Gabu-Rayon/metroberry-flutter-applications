@@ -1,1 +1,29 @@
-{  "Replace your file": "1" }
+{
+  "project_info": {
+    "project_number": "107316073750",
+    "project_id": "metrotaxi-782a6",
+    "storage_bucket": "metrotaxi-782a6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:107316073750:android:a9a33daa0e79e76008ac37",
+        "android_client_info": {
+          "package_name": "com.mytaxi.admin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIXlDAva_RnlC5kiTPfh99o_vOJkWbnEM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

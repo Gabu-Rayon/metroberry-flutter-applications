@@ -25,15 +25,9 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -47,32 +41,49 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'Replace with your key',
-    appId: 'Replace with your key',
-    messagingSenderId: 'Replace with your key',
-    projectId: 'Replace with your key',
-    authDomain: 'Replace with your key',
-    storageBucket: 'Replace with your key',
-    measurementId: 'Replace with your key',
+    apiKey: 'AIzaSyDsO3KRv-cWcpZbAif6PRohlinm72m5BQI',
+    appId: '1:107316073750:web:d6a05c01ce58d87008ac37',
+    messagingSenderId: '107316073750',
+    projectId: 'metrotaxi-782a6',
+    authDomain: 'metrotaxi-782a6.firebaseapp.com',
+    storageBucket: 'metrotaxi-782a6.appspot.com',
+    measurementId: 'G-NHS7T68J8H',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'Replace with your key',
-    appId: 'Replace with your key',
-    messagingSenderId: 'Replace with your key',
-    projectId: 'Replace with your key',
-    storageBucket: 'Replace with your key',
+    apiKey: 'AIzaSyBIXlDAva_RnlC5kiTPfh99o_vOJkWbnEM',
+    appId: '1:107316073750:android:a9a33daa0e79e76008ac37',
+    messagingSenderId: '107316073750',
+    projectId: 'metrotaxi-782a6',
+    storageBucket: 'metrotaxi-782a6.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'Replace with your key',
-    appId: 'Replace with your key',
-    messagingSenderId: 'Replace with your key',
-    projectId: 'Replace with your key',
-    storageBucket: 'Replace with your key',
-    androidClientId: 'Replace with your key',
-    iosClientId: 'Replace with your key',
-    iosBundleId: 'Replace with your key',
+    apiKey: 'AIzaSyDvMCKDNnORaG3lfyhF0l04KI3MmyAqLHg',
+    appId: '1:107316073750:ios:e8f6a2fcb3814beb08ac37',
+    messagingSenderId: '107316073750',
+    projectId: 'metrotaxi-782a6',
+    storageBucket: 'metrotaxi-782a6.appspot.com',
+    iosBundleId: 'com.mytaxi.admin',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyDvMCKDNnORaG3lfyhF0l04KI3MmyAqLHg',
+    appId: '1:107316073750:ios:5acaf204cfdfe87108ac37',
+    messagingSenderId: '107316073750',
+    projectId: 'metrotaxi-782a6',
+    storageBucket: 'metrotaxi-782a6.appspot.com',
+    iosBundleId: 'com.metroberry.app',
+  );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyDsO3KRv-cWcpZbAif6PRohlinm72m5BQI',
+    appId: '1:107316073750:web:0c8c18585cb2029808ac37',
+    messagingSenderId: '107316073750',
+    projectId: 'metrotaxi-782a6',
+    authDomain: 'metrotaxi-782a6.firebaseapp.com',
+    storageBucket: 'metrotaxi-782a6.appspot.com',
+    measurementId: 'G-0QYGQVPCYZ',
   );
 
 }
