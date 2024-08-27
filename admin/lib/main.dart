@@ -16,7 +16,6 @@ import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 Future<void> main() async {
-
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -42,7 +41,8 @@ class _MyAppState extends State<MyApp> {
   }
 
   void getCurrentAppTheme() async {
-    themeChangeProvider.darkTheme = await themeChangeProvider.darkThemePreference.getTheme();
+    themeChangeProvider.darkTheme =
+        await themeChangeProvider.darkThemePreference.getTheme();
   }
 
   @override
@@ -60,17 +60,24 @@ class _MyAppState extends State<MyApp> {
               builder: (context, child) {
                 return GetMaterialApp(
                   scrollBehavior: MyCustomScrollBehavior(),
-                  theme:
-                      ThemeData(useMaterial3: false, primaryColor: AppThemData.primaryBlack, primaryTextTheme: const TextTheme(), unselectedWidgetColor: AppThemData.greyShade500),
+                  theme: ThemeData(
+                      useMaterial3: false,
+                      primaryColor: AppThemData.primaryBlack,
+                      primaryTextTheme: const TextTheme(),
+                      unselectedWidgetColor: AppThemData.greyShade500),
                   themeMode: ThemeMode.light,
                   debugShowCheckedModeBanner: false,
                   locale: LocalizationService.locale,
                   fallbackLocale: LocalizationService.locale,
                   translations: LocalizationService(),
-                  title: "MyTaxi",
+                  title: "MetroBerry",
                   initialRoute: AppPages.INITIAL,
                   getPages: AppPages.routes,
-                  unknownRoute: GetPage(name: Routes.ERROR_SCREEN, page: () => const ErrorScreenView(), binding: ErrorScreenBinding(), transition: Transition.fadeIn),
+                  unknownRoute: GetPage(
+                      name: Routes.ERROR_SCREEN,
+                      page: () => const ErrorScreenView(),
+                      binding: ErrorScreenBinding(),
+                      transition: Transition.fadeIn),
                 );
               });
         },

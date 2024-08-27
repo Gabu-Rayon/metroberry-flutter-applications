@@ -74,13 +74,17 @@ class DashboardScreenController extends GetxController {
     await getAllStatisticData();
     await getTodayStatisticData();
     await getLanguage();
-    recentBookingList.value = bookingList.sublist(0, 5);
+    if (bookingList.length >= 5) {
+      recentBookingList.value = bookingList.sublist(0, 5);
+    }
+    recentBookingList.value = bookingList;
     userList.value = await FireStoreUtils.getRecentUsers();
     totalCab.value = await FireStoreUtils.countDrivers();
     totalUser.value = await FireStoreUtils.countUsers();
     bookingChartData = List.filled(12, ChartData("", 0));
     usersChartData = List.filled(12, ChartData("", 0));
-    usersCircleChartData = List.filled(12, ChartDataCircle("", 0, Colors.amber));
+    usersCircleChartData =
+        List.filled(12, ChartDataCircle("", 0, Colors.amber));
     late RxList<ChartDataCircle> chartData;
     getBookingData();
     isUserData = false.obs;
@@ -109,7 +113,8 @@ class DashboardScreenController extends GetxController {
 
   getTodayStatisticData() async {
     for (var booking in bookingList) {
-      if (Constant.timestampToDate(booking.createAt!) == Constant.timestampToDate(Timestamp.now())) {
+      if (Constant.timestampToDate(booking.createAt!) ==
+          Constant.timestampToDate(Timestamp.now())) {
         if (booking.bookingStatus == BookingStatus.bookingCompleted) {
           todayTotalEarnings.value += Constant.calculateFinalAmount(booking);
         }
@@ -119,8 +124,14 @@ class DashboardScreenController extends GetxController {
 
   getAllStatisticData() async {
     totalBookings.value = bookingList.length;
-    totalService.value = bookingList.where((element) => element.bookingStatus == BookingStatus.bookingCompleted).length;
-    totalBookingPlaced.value = bookingList.where((element) => element.bookingStatus == BookingStatus.bookingPlaced).length;
+    totalService.value = bookingList
+        .where((element) =>
+            element.bookingStatus == BookingStatus.bookingCompleted)
+        .length;
+    totalBookingPlaced.value = bookingList
+        .where(
+            (element) => element.bookingStatus == BookingStatus.bookingPlaced)
+        .length;
     totalBookingActive.value = bookingList
         .where((element) =>
             element.bookingStatus == BookingStatus.bookingAccepted ||
@@ -129,8 +140,14 @@ class DashboardScreenController extends GetxController {
             element.bookingStatus == BookingStatus.bookingCancelled ||
             element.bookingStatus == BookingStatus.bookingPlaced)
         .length;
-    totalBookingCompleted.value = bookingList.where((element) => element.bookingStatus == BookingStatus.bookingCompleted).length;
-    totalBookingCanceled.value = bookingList.where((element) => element.bookingStatus == BookingStatus.bookingCancelled).length;
+    totalBookingCompleted.value = bookingList
+        .where((element) =>
+            element.bookingStatus == BookingStatus.bookingCompleted)
+        .length;
+    totalBookingCanceled.value = bookingList
+        .where((element) =>
+            element.bookingStatus == BookingStatus.bookingCancelled)
+        .length;
 
     for (var booking in bookingList) {
       if (booking.bookingStatus == BookingStatus.bookingCompleted) {
@@ -145,10 +162,13 @@ class DashboardScreenController extends GetxController {
       ChartDataCircle('Total Service', totalService.value, Colors.blue),
       ChartDataCircle('Total Booking', totalBookings.value, Colors.purple),
       ChartDataCircle('Total Users', totalCab.value, Colors.green),
-      ChartDataCircle('Booking Placed', totalBookingPlaced.value, Colors.yellow),
+      ChartDataCircle(
+          'Booking Placed', totalBookingPlaced.value, Colors.yellow),
       ChartDataCircle('Booking Active', totalBookingActive.value, Colors.brown),
-      ChartDataCircle('Booking Completed', totalBookingCompleted.value, Colors.deepOrange),
-      ChartDataCircle('Booking Canceled', totalBookingCanceled.value, Colors.red),
+      ChartDataCircle(
+          'Booking Completed', totalBookingCompleted.value, Colors.deepOrange),
+      ChartDataCircle(
+          'Booking Canceled', totalBookingCanceled.value, Colors.red),
     ];
   }
 
@@ -172,22 +192,27 @@ class DashboardScreenController extends GetxController {
     isLoadingBookingChart.value = false;
   }
 
-  getBookingMonthWiseData(String monthValue, int index, String monthName) async {
+  getBookingMonthWiseData(
+      String monthValue, int index, String monthName) async {
     int month = int.parse(monthValue);
     DateTime firstDayOfMonth = DateTime(DateTime.now().year, month, 1);
-    DateTime lastDayOfMonth = DateTime(DateTime.now().year, month + 1, 0, 23, 59, 59);
+    DateTime lastDayOfMonth =
+        DateTime(DateTime.now().year, month + 1, 0, 23, 59, 59);
 
     List<BookingModel> bookingHistory = [];
 
     try {
       QuerySnapshot value = await FirebaseFirestore.instance
           .collection(CollectionName.bookings)
-          .where("createAt", isGreaterThanOrEqualTo: firstDayOfMonth, isLessThanOrEqualTo: lastDayOfMonth)
+          .where("createAt",
+              isGreaterThanOrEqualTo: firstDayOfMonth,
+              isLessThanOrEqualTo: lastDayOfMonth)
           .where("bookingStatus", isEqualTo: "booking_completed")
           .get();
 
       for (var element in value.docs) {
-        Map<String, dynamic>? elementData = element.data() as Map<String, dynamic>?;
+        Map<String, dynamic>? elementData =
+            element.data() as Map<String, dynamic>?;
         // bookingChartData
         if (elementData != null) {
           BookingModel orderHistoryModel = BookingModel.fromJson(elementData);

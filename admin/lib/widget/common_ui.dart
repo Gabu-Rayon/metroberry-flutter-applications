@@ -39,7 +39,9 @@ class LanguagePopUp extends StatelessWidget {
             child: ContainerBorderCustom(
               color: AppThemData.greyShade500,
               child: PopupMenuButton<LanguageModel>(
-                  color: themeChange.isDarkTheme() ? AppThemData.greyShade950 : AppThemData.greyShade25,
+                  color: themeChange.isDarkTheme()
+                      ? AppThemData.greyShade950
+                      : AppThemData.greyShade25,
                   position: PopupMenuPosition.under,
                   child: SizedBox(
                     width: 120,
@@ -49,7 +51,10 @@ class LanguagePopUp extends StatelessWidget {
                         //------------------- for Language Image---------------------
                         // ClipRRect(
                         //     borderRadius: BorderRadius.circular(30), child: Image.network(controller.selectedLanguage.value.image ?? '', height: 25, width: 25, fit: BoxFit.cover)),
-                        TextCustom(title: controller.selectedLanguage.value.name ?? '', fontSize: 15, fontFamily: AppThemeData.bold),
+                        TextCustom(
+                            title: controller.selectedLanguage.value.name ?? '',
+                            fontSize: 15,
+                            fontFamily: AppThemeData.bold),
                         SvgPicture.asset(
                           'assets/icons/ic_down.svg',
                           height: 20,
@@ -64,7 +69,8 @@ class LanguagePopUp extends StatelessWidget {
                     printLog("Select Language${value.name}");
                     printLog("Select Language${value.code}");
                     controller.selectedLanguage.value = value;
-                    LocalizationService().changeLocale(controller.selectedLanguage.value.code.toString());
+                    LocalizationService().changeLocale(
+                        controller.selectedLanguage.value.code.toString());
                     AppSharedPreference.setString(
                       AppSharedPreference.languageCodeKey,
                       jsonEncode(
@@ -81,7 +87,11 @@ class LanguagePopUp extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(e.name ?? '', style: TextStyle(color: themeChange.isDarkTheme() ? AppThemData.primaryWhite : AppThemData.primaryBlack)),
+                                  Text(e.name ?? '',
+                                      style: TextStyle(
+                                          color: themeChange.isDarkTheme()
+                                              ? AppThemData.primaryWhite
+                                              : AppThemData.primaryBlack)),
                                 ],
                               ),
                             ))
@@ -113,15 +123,26 @@ class ProfilePopUp extends StatelessWidget {
                   ClipRRect(
                       borderRadius: BorderRadius.circular(50),
                       child: NetworkImageWidget(
-                          imageUrl: controller.admin.value.image ?? Constant.userPlaceHolder,
+                          imageUrl: controller.admin.value.image ??
+                              Constant.userPlaceHolder,
                           height: ResponsiveWidget.isMobile(context) ? 30 : 40,
                           width: ResponsiveWidget.isMobile(context) ? 30 : 40)),
                   if (!ResponsiveWidget.isMobile(context)) spaceW(),
                   if (!ResponsiveWidget.isMobile(context))
-                    Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.start, children: [
-                      const TextCustom(title: 'Hello', fontSize: 12, fontFamily: AppThemeData.bold),
-                      TextCustom(title: controller.admin.value.name ?? 'Admin', fontSize: 15, fontFamily: AppThemeData.bold, maxLine: 1),
-                    ]),
+                    Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const TextCustom(
+                              title: 'Hello',
+                              fontSize: 12,
+                              fontFamily: AppThemeData.bold),
+                          TextCustom(
+                              title: controller.admin.value.name ?? 'Admin',
+                              fontSize: 15,
+                              fontFamily: AppThemeData.bold,
+                              maxLine: 1),
+                        ]),
                   if (!ResponsiveWidget.isMobile(context)) spaceW(width: 16),
                 ],
               ),
@@ -133,12 +154,17 @@ class ProfilePopUp extends StatelessWidget {
 
 class CommonUI {
   static appBarCustom(
-      {Widget? title = const SizedBox(), List<Widget>? actions = const [], required DarkThemeProvider themeChange, required GlobalKey<ScaffoldState> scaffoldKey}) {
+      {Widget? title = const SizedBox(),
+      List<Widget>? actions = const [],
+      required DarkThemeProvider themeChange,
+      required GlobalKey<ScaffoldState> scaffoldKey}) {
     return AppBar(
       elevation: 0.0,
       toolbarHeight: 70,
       automaticallyImplyLeading: false,
-      backgroundColor: themeChange.isDarkTheme() ? AppThemData.primaryBlack : AppThemData.primaryWhite,
+      backgroundColor: themeChange.isDarkTheme()
+          ? AppThemData.primaryBlack
+          : AppThemData.primaryWhite,
       leadingWidth: 200,
       title: title,
       leading: GestureDetector(
@@ -149,7 +175,7 @@ class CommonUI {
           child: Row(
             children: [
               Expanded(
-                child:SizedBox(
+                child: SizedBox(
                   height: 45,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -160,14 +186,6 @@ class CommonUI {
                         height: 45,
                         color: AppThemData.primary500,
                       ),
-                      spaceW(),
-                      const TextCustom(
-                        title: 'My Taxi',
-                        color: AppThemData.primary500,
-                        fontSize: 30,
-                        fontFamily: AppThemeData.semiBold,
-                        fontWeight: FontWeight.w700,
-                      )
                     ],
                   ),
                 ),
@@ -212,16 +230,23 @@ class CommonUI {
     );
   }
 
-  static drawerCustom({required DarkThemeProvider themeChange, required GlobalKey<ScaffoldState> scaffoldKey}) {
+  static drawerCustom(
+      {required DarkThemeProvider themeChange,
+      required GlobalKey<ScaffoldState> scaffoldKey}) {
     return Drawer(
       key: scaffoldKey,
       width: 270,
-      backgroundColor: themeChange.isDarkTheme() ? AppThemData.primaryBlack : AppThemData.primaryWhite,
+      backgroundColor: themeChange.isDarkTheme()
+          ? AppThemData.primaryBlack
+          : AppThemData.primaryWhite,
       child: MenuWidget(),
     );
   }
 
-  static dataColumnWidget(BuildContext context, {String columnName = 'Na', required String columnTitle, required double width}) {
+  static dataColumnWidget(BuildContext context,
+      {String columnName = 'Na',
+      required String columnTitle,
+      required double width}) {
     return DataColumn(
         label: SizedBox(
       width: width,
@@ -254,7 +279,9 @@ class NumberOfRowsDropDown extends StatelessWidget {
             isExpanded: true,
             style: TextStyle(
               fontFamily: AppThemeData.medium,
-              color: themeChange.isDarkTheme() ? AppThemData.textBlack : AppThemData.primary500,
+              color: themeChange.isDarkTheme()
+                  ? AppThemData.textBlack
+                  : AppThemData.primary500,
             ),
             value: controller.totalItemPerPage.value,
             hint: TextCustom(title: 'Select'.tr),
@@ -266,37 +293,61 @@ class NumberOfRowsDropDown extends StatelessWidget {
                 iconColor: AppThemData.primary500,
                 isDense: true,
                 filled: true,
-                fillColor: themeChange.isDarkTheme() ? AppThemData.greyShade800 : AppThemData.greyShade100,
-                contentPadding: const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
+                fillColor: themeChange.isDarkTheme()
+                    ? AppThemData.greyShade800
+                    : AppThemData.greyShade100,
+                contentPadding:
+                    const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
                 disabledBorder: OutlineInputBorder(
                   borderRadius: const BorderRadius.all(Radius.circular(10)),
-                  borderSide: BorderSide(color: themeChange.isDarkTheme() ? AppThemData.greyShade800 : AppThemData.greyShade100),
+                  borderSide: BorderSide(
+                      color: themeChange.isDarkTheme()
+                          ? AppThemData.greyShade800
+                          : AppThemData.greyShade100),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: const BorderRadius.all(Radius.circular(10)),
-                  borderSide: BorderSide(color: themeChange.isDarkTheme() ? AppThemData.greyShade800 : AppThemData.greyShade100),
+                  borderSide: BorderSide(
+                      color: themeChange.isDarkTheme()
+                          ? AppThemData.greyShade800
+                          : AppThemData.greyShade100),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: const BorderRadius.all(Radius.circular(10)),
-                  borderSide: BorderSide(color: themeChange.isDarkTheme() ? AppThemData.greyShade800 : AppThemData.greyShade100),
+                  borderSide: BorderSide(
+                      color: themeChange.isDarkTheme()
+                          ? AppThemData.greyShade800
+                          : AppThemData.greyShade100),
                 ),
                 errorBorder: OutlineInputBorder(
                   borderRadius: const BorderRadius.all(Radius.circular(10)),
-                  borderSide: BorderSide(color: themeChange.isDarkTheme() ? AppThemData.greyShade800 : AppThemData.greyShade100),
+                  borderSide: BorderSide(
+                      color: themeChange.isDarkTheme()
+                          ? AppThemData.greyShade800
+                          : AppThemData.greyShade100),
                 ),
                 border: OutlineInputBorder(
                   borderRadius: const BorderRadius.all(Radius.circular(10)),
-                  borderSide: BorderSide(color: themeChange.isDarkTheme() ? AppThemData.greyShade800 : AppThemData.greyShade100),
+                  borderSide: BorderSide(
+                      color: themeChange.isDarkTheme()
+                          ? AppThemData.greyShade800
+                          : AppThemData.greyShade100),
                 ),
                 hintText: "Select".tr,
-                hintStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500, fontFamily: AppThemeData.medium)),
-            items: Constant.numOfPageIemList.map<DropdownMenuItem<String>>((value) {
+                hintStyle: const TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: AppThemeData.medium)),
+            items: Constant.numOfPageIemList
+                .map<DropdownMenuItem<String>>((value) {
               return DropdownMenuItem<String>(
                 value: value,
                 child: TextCustom(
                   title: value,
                   fontFamily: AppThemeData.medium,
-                  color: themeChange.isDarkTheme() ? AppThemData.primaryBlack : AppThemData.greyShade800,
+                  color: themeChange.isDarkTheme()
+                      ? AppThemData.primaryBlack
+                      : AppThemData.greyShade800,
                 ),
               );
             }).toList(),
@@ -314,14 +365,22 @@ class CustomDialog extends StatelessWidget {
   List<Widget>? widgetList = <Widget>[];
   List<Widget>? bottomWidgetList = <Widget>[];
 
-  CustomDialog({super.key, this.controller, this.widgetList, this.bottomWidgetList, this.title});
+  CustomDialog(
+      {super.key,
+      this.controller,
+      this.widgetList,
+      this.bottomWidgetList,
+      this.title});
 
   @override
   Widget build(BuildContext context) {
     final themeChange = Provider.of<DarkThemeProvider>(context);
     return Dialog(
-      backgroundColor: themeChange.isDarkTheme() ? AppThemData.greyShade950 : AppThemData.greyShade50,
-      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8.0))),
+      backgroundColor: themeChange.isDarkTheme()
+          ? AppThemData.greyShade950
+          : AppThemData.greyShade50,
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(8.0))),
       alignment: Alignment.topCenter,
       // title: const TextCustom(title: 'Item Categories', fontSize: 18),
       child: SizedBox(
@@ -334,8 +393,12 @@ class CustomDialog extends StatelessWidget {
                 Container(
                     padding: const EdgeInsets.all(24),
                     decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.only(topLeft: Radius.circular(8.0), topRight: Radius.circular(8.0)),
-                      color: themeChange.isDarkTheme() ? AppThemData.greyShade900 : AppThemData.greyShade100,
+                      borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(8.0),
+                          topRight: Radius.circular(8.0)),
+                      color: themeChange.isDarkTheme()
+                          ? AppThemData.greyShade900
+                          : AppThemData.greyShade100,
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -72,14 +72,6 @@ class VehicleBrandScreenView extends GetView<VehicleBrandScreenController> {
                                   height: 45,
                                   color: AppThemData.primary500,
                                 ),
-                                spaceW(),
-                                const TextCustom(
-                                  title: 'My Taxi',
-                                  color: AppThemData.primary500,
-                                  fontSize: 30,
-                                  fontFamily: AppThemeData.semiBold,
-                                  fontWeight: FontWeight.w700,
-                                )
                               ],
                             ),
                           ),
