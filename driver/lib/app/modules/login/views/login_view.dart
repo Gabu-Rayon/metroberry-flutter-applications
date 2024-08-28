@@ -34,8 +34,15 @@ class LoginView extends StatelessWidget {
               }
             },
             child: Scaffold(
-              backgroundColor: themeChange.isDarkTheme() ? AppThemData.black : AppThemData.white,
-              appBar: AppBar(forceMaterialTransparency: true, backgroundColor: themeChange.isDarkTheme() ? AppThemData.black : AppThemData.white, automaticallyImplyLeading: false),
+              backgroundColor: themeChange.isDarkTheme()
+                  ? AppThemData.black
+                  : AppThemData.white,
+              appBar: AppBar(
+                  forceMaterialTransparency: true,
+                  backgroundColor: themeChange.isDarkTheme()
+                      ? AppThemData.black
+                      : AppThemData.white,
+                  automaticallyImplyLeading: false),
               body: Container(
                 width: Responsive.width(100, context),
                 height: Responsive.height(100, context),
@@ -46,23 +53,38 @@ class LoginView extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 32),
-                        child: Center(child: SvgPicture.asset(themeChange.isDarkTheme() ? "assets/icon/splash_logo.svg" : "assets/icon/logo_black.svg")),
+                      Center(
+                        child: SvgPicture.asset(
+                            height: 100,
+                            themeChange.isDarkTheme()
+                                ? "assets/icon/splash_logo.svg"
+                                : "assets/icon/logo_black.svg"),
                       ),
                       Text(
                         "Login".tr,
-                        style: GoogleFonts.inter(fontSize: 24, color: themeChange.isDarkTheme() ? AppThemData.white : AppThemData.black, fontWeight: FontWeight.w700),
+                        style: GoogleFonts.inter(
+                            fontSize: 24,
+                            color: themeChange.isDarkTheme()
+                                ? AppThemData.white
+                                : AppThemData.black,
+                            fontWeight: FontWeight.w700),
                       ),
                       Text(
                         "Please login to continue".tr,
-                        style: GoogleFonts.inter(fontSize: 14, color: themeChange.isDarkTheme() ? AppThemData.white : AppThemData.black, fontWeight: FontWeight.w400),
+                        style: GoogleFonts.inter(
+                            fontSize: 14,
+                            color: themeChange.isDarkTheme()
+                                ? AppThemData.white
+                                : AppThemData.black,
+                            fontWeight: FontWeight.w400),
                       ),
                       Container(
                         height: 110,
                         width: Responsive.width(100, context),
                         margin: const EdgeInsets.only(top: 36, bottom: 48),
-                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), border: Border.all(color: AppThemData.grey100)),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(color: AppThemData.grey100)),
                         child: Form(
                           key: controller.formKey.value,
                           child: Column(
@@ -74,10 +96,12 @@ class LoginView extends StatelessWidget {
                                 padding: const EdgeInsets.all(8.0),
                                 child: CountryCodeSelectorView(
                                   isCountryNameShow: true,
-                                  countryCodeController: controller.countryCodeController,
+                                  countryCodeController:
+                                      controller.countryCodeController,
                                   isEnable: true,
                                   onChanged: (value) {
-                                    controller.countryCodeController.text = value.dialCode.toString();
+                                    controller.countryCodeController.text =
+                                        value.dialCode.toString();
                                   },
                                 ),
                               ),
@@ -85,12 +109,18 @@ class LoginView extends StatelessWidget {
                               SizedBox(
                                 height: 45,
                                 child: TextFormField(
-                                  cursorColor: themeChange.isDarkTheme() ? AppThemData.white : AppThemData.black,
+                                  cursorColor: themeChange.isDarkTheme()
+                                      ? AppThemData.white
+                                      : AppThemData.black,
                                   keyboardType: TextInputType.number,
                                   controller: controller.phoneNumberController,
-                                  validator: (value) => validateMobile(value, controller.countryCodeController.value.text),
+                                  validator: (value) => validateMobile(
+                                      value,
+                                      controller
+                                          .countryCodeController.value.text),
                                   inputFormatters: <TextInputFormatter>[
-                                    FilteringTextInputFormatter.allow(RegExp("[0-9]")),
+                                    FilteringTextInputFormatter.allow(
+                                        RegExp("[0-9]")),
                                   ],
                                   decoration: InputDecoration(
                                     border: InputBorder.none,
@@ -98,7 +128,8 @@ class LoginView extends StatelessWidget {
                                     enabledBorder: InputBorder.none,
                                     errorBorder: InputBorder.none,
                                     disabledBorder: InputBorder.none,
-                                    contentPadding: const EdgeInsets.only(left: 15, bottom: 0, top: 0, right: 15),
+                                    contentPadding: const EdgeInsets.only(
+                                        left: 15, bottom: 0, top: 0, right: 15),
                                     hintText: "Enter your Phone Number".tr,
                                   ),
                                 ),
@@ -114,10 +145,12 @@ class LoginView extends StatelessWidget {
                             buttonColor: AppThemData.primary500,
                             buttonTextColor: AppThemData.black,
                             onTap: () {
-                              if (controller.formKey.value.currentState!.validate()) {
+                              if (controller.formKey.value.currentState!
+                                  .validate()) {
                                 controller.sendCode();
                               } else {
-                                ShowToastDialog.showToast('Please enter a valid number'.tr);
+                                ShowToastDialog.showToast(
+                                    'Please enter a valid number'.tr);
                               }
                             }),
                       ),
@@ -134,7 +167,10 @@ class LoginView extends StatelessWidget {
                             ),
                             Text(
                               "Continue with".tr,
-                              style: GoogleFonts.inter(fontSize: 12, color: AppThemData.grey400, fontWeight: FontWeight.w400),
+                              style: GoogleFonts.inter(
+                                  fontSize: 12,
+                                  color: AppThemData.grey400,
+                                  fontWeight: FontWeight.w400),
                             ),
                             Container(
                               width: 52,
@@ -157,7 +193,9 @@ class LoginView extends StatelessWidget {
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(200),
                                   border: Border.all(
-                                    color: themeChange.isDarkTheme() ? AppThemData.white : AppThemData.grey100,
+                                    color: themeChange.isDarkTheme()
+                                        ? AppThemData.white
+                                        : AppThemData.grey100,
                                   )),
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
@@ -168,14 +206,20 @@ class LoginView extends StatelessWidget {
                                     "assets/icon/ic_apple.svg",
                                     height: 24,
                                     width: 24,
-                                    colorFilter: ColorFilter.mode(themeChange.isDarkTheme() ? AppThemData.white : AppThemData.black, BlendMode.srcIn),
+                                    colorFilter: ColorFilter.mode(
+                                        themeChange.isDarkTheme()
+                                            ? AppThemData.white
+                                            : AppThemData.black,
+                                        BlendMode.srcIn),
                                   ),
                                   const SizedBox(width: 12),
                                   Text(
                                     'Apple'.tr,
                                     textAlign: TextAlign.center,
                                     style: GoogleFonts.inter(
-                                      color: themeChange.isDarkTheme() ? AppThemData.white : AppThemData.black,
+                                      color: themeChange.isDarkTheme()
+                                          ? AppThemData.white
+                                          : AppThemData.black,
                                       fontSize: 14,
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -198,20 +242,25 @@ class LoginView extends StatelessWidget {
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(200),
                                 border: Border.all(
-                                  color: themeChange.isDarkTheme() ? AppThemData.white : AppThemData.grey100,
+                                  color: themeChange.isDarkTheme()
+                                      ? AppThemData.white
+                                      : AppThemData.grey100,
                                 )),
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                SvgPicture.asset("assets/icon/ic_google.svg", height: 24, width: 24),
+                                SvgPicture.asset("assets/icon/ic_google.svg",
+                                    height: 24, width: 24),
                                 const SizedBox(width: 12),
                                 Text(
                                   'Google'.tr,
                                   textAlign: TextAlign.center,
                                   style: GoogleFonts.inter(
-                                    color: themeChange.isDarkTheme() ? AppThemData.white : AppThemData.black,
+                                    color: themeChange.isDarkTheme()
+                                        ? AppThemData.white
+                                        : AppThemData.black,
                                     fontSize: 14,
                                     fontWeight: FontWeight.w500,
                                   ),

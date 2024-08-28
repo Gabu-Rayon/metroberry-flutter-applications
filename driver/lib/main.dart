@@ -17,22 +17,21 @@ import 'package:provider/provider.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    name: "MyTaxi".tr,
+    name: "MetroBerry".tr,
     options: DefaultFirebaseOptions.currentPlatform,
   );
   configLoading();
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    title: 'MyTaxi',
+    title: 'MetroBerry',
     theme: ThemeData(
       primarySwatch: Colors.amber,
       textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1),
     ),
-    supportedLocales: [
+    supportedLocales: const [
       Locale("en"),
-
     ],
-    localizationsDelegates: [
+    localizationsDelegates: const [
       CountryLocalizations.delegate,
       // GlobalMaterialLocalizations.delegate,
       // GlobalWidgetsLocalizations.delegate,
@@ -56,8 +55,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     getCurrentAppTheme();
     WidgetsBinding.instance.addObserver(this);
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      // if (Preferences.getString(Preferences.languageCodeKey).toString().isNotEmpty) {
-      //   LanguageModel languageModel = Constant.getLanguage();
+      // if (Preferences.getString(Preferences.languageCodeKey).toString().isNotEmpty) {      //   LanguageModel languageModel = Constant.getLanguage();
       //   LocalizationService().changeLocale(languageModel.code.toString());
       // } else {
       //   LanguageModel languageModel = LanguageModel(id: "cdc", code: "en", isRtl: false, name: "English");
@@ -88,7 +86,8 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   }
 
   void getCurrentAppTheme() async {
-    themeChangeProvider.darkTheme = await themeChangeProvider.darkThemePreference.getTheme();
+    themeChangeProvider.darkTheme =
+        await themeChangeProvider.darkThemePreference.getTheme();
   }
 
   @override
@@ -100,7 +99,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
       child: Consumer<DarkThemeProvider>(
         builder: (context, value, child) {
           return GetMaterialApp(
-              title: 'MyTaxi'.tr,
+              title: 'MetroBerry'.tr,
               debugShowCheckedModeBanner: false,
               theme: Styles.themeData(
                   themeChangeProvider.darkTheme == 0

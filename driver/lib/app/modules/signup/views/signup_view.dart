@@ -33,7 +33,9 @@ class SignupView extends StatelessWidget {
               }
             },
             child: Scaffold(
-              backgroundColor: themeChange.isDarkTheme() ? AppThemData.black : AppThemData.white,
+              backgroundColor: themeChange.isDarkTheme()
+                  ? AppThemData.black
+                  : AppThemData.white,
               body: SafeArea(
                 child: Container(
                   width: Responsive.width(100, context),
@@ -47,25 +49,41 @@ class SignupView extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          Padding(
-                            padding: EdgeInsets.only(top: Responsive.height(5, context), bottom: 32),
-                            child: Center(child: SvgPicture.asset(themeChange.isDarkTheme() ? "assets/icon/splash_logo.svg" : "assets/icon/logo_black.svg")),
-                          ),
+                          Center(
+                              child: SvgPicture.asset(
+                                  height: 100,
+                                  themeChange.isDarkTheme()
+                                      ? "assets/icon/splash_logo.svg"
+                                      : "assets/icon/logo_black.svg")),
                           Text(
                             "Create Account".tr,
-                            style: GoogleFonts.inter(fontSize: 24, color: themeChange.isDarkTheme() ? AppThemData.white : AppThemData.black, fontWeight: FontWeight.w700),
+                            style: GoogleFonts.inter(
+                                fontSize: 24,
+                                color: themeChange.isDarkTheme()
+                                    ? AppThemData.white
+                                    : AppThemData.black,
+                                fontWeight: FontWeight.w700),
                           ),
                           Text(
                             "Create an account to start ride.".tr,
-                            style: GoogleFonts.inter(fontSize: 14, color: themeChange.isDarkTheme() ? AppThemData.white : AppThemData.black, fontWeight: FontWeight.w400),
+                            style: GoogleFonts.inter(
+                                fontSize: 14,
+                                color: themeChange.isDarkTheme()
+                                    ? AppThemData.white
+                                    : AppThemData.black,
+                                fontWeight: FontWeight.w400),
                           ),
                           const SizedBox(height: 36),
                           TextFieldWithTitle(
                             title: "Full Name".tr,
                             hintText: "Enter Full Name".tr,
-                            prefixIcon: const Icon(Icons.person_outline_rounded),
+                            prefixIcon:
+                                const Icon(Icons.person_outline_rounded),
                             controller: controller.nameController,
-                            validator: (value) => value != null && value.isNotEmpty ? null : 'This field required'.tr,
+                            validator: (value) =>
+                                value != null && value.isNotEmpty
+                                    ? null
+                                    : 'This field required'.tr,
                           ),
                           const SizedBox(height: 20),
                           TextFieldWithTitle(
@@ -74,8 +92,10 @@ class SignupView extends StatelessWidget {
                             prefixIcon: const Icon(Icons.email_outlined),
                             keyboardType: TextInputType.emailAddress,
                             controller: controller.emailController,
-                            isEnable: controller.loginType.value == Constant.phoneLoginType,
-                            validator: (value) => Constant().validateEmail(value),
+                            isEnable: controller.loginType.value ==
+                                Constant.phoneLoginType,
+                            validator: (value) =>
+                                Constant().validateEmail(value),
                           ),
                           const SizedBox(height: 20),
                           TextFieldWithTitle(
@@ -83,19 +103,25 @@ class SignupView extends StatelessWidget {
                             hintText: "Enter Phone Number".tr,
                             prefixIcon: CountryCodeSelectorView(
                               isCountryNameShow: false,
-                              countryCodeController: controller.countryCodeController,
-                              isEnable: controller.loginType.value != Constant.phoneLoginType,
+                              countryCodeController:
+                                  controller.countryCodeController,
+                              isEnable: controller.loginType.value !=
+                                  Constant.phoneLoginType,
                               onChanged: (value) {
-                                controller.countryCodeController.text = value.dialCode.toString();
+                                controller.countryCodeController.text =
+                                    value.dialCode.toString();
                               },
                             ),
-                            validator: (value) => validateMobile(value, controller.countryCodeController.value.text),
+                            validator: (value) => validateMobile(value,
+                                controller.countryCodeController.value.text),
                             keyboardType: TextInputType.number,
                             inputFormatters: <TextInputFormatter>[
-                              FilteringTextInputFormatter.allow(RegExp("[0-9]")),
+                              FilteringTextInputFormatter.allow(
+                                  RegExp("[0-9]")),
                             ],
                             controller: controller.phoneNumberController,
-                            isEnable: controller.loginType.value != Constant.phoneLoginType,
+                            isEnable: controller.loginType.value !=
+                                Constant.phoneLoginType,
                           ),
                           // Column(
                           //   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -139,7 +165,12 @@ class SignupView extends StatelessWidget {
                             children: [
                               Text(
                                 "Gender".tr,
-                                style: GoogleFonts.inter(fontSize: 14, color: themeChange.isDarkTheme() ? AppThemData.white : AppThemData.grey950, fontWeight: FontWeight.w500),
+                                style: GoogleFonts.inter(
+                                    fontSize: 14,
+                                    color: themeChange.isDarkTheme()
+                                        ? AppThemData.white
+                                        : AppThemData.grey950,
+                                    fontWeight: FontWeight.w500),
                               ),
                             ],
                           ),
@@ -152,7 +183,8 @@ class SignupView extends StatelessWidget {
                                   groupValue: controller.selectedGender.value,
                                   activeColor: AppThemData.primary500,
                                   onChanged: (value) {
-                                    controller.selectedGender.value = value ?? 1;
+                                    controller.selectedGender.value =
+                                        value ?? 1;
                                     // _radioVal = 'male';
                                   },
                                 ),
@@ -164,11 +196,12 @@ class SignupView extends StatelessWidget {
                                     'Male'.tr,
                                     style: GoogleFonts.inter(
                                         fontSize: 14,
-                                        color: controller.selectedGender.value == 1
-                                            ? themeChange.isDarkTheme()
-                                                ? AppThemData.white
-                                                : AppThemData.grey950
-                                            : AppThemData.grey500,
+                                        color:
+                                            controller.selectedGender.value == 1
+                                                ? themeChange.isDarkTheme()
+                                                    ? AppThemData.white
+                                                    : AppThemData.grey950
+                                                : AppThemData.grey500,
                                         fontWeight: FontWeight.w500),
                                   ),
                                 ),
@@ -177,7 +210,8 @@ class SignupView extends StatelessWidget {
                                   groupValue: controller.selectedGender.value,
                                   activeColor: AppThemData.primary500,
                                   onChanged: (value) {
-                                    controller.selectedGender.value = value ?? 2;
+                                    controller.selectedGender.value =
+                                        value ?? 2;
                                     // _radioVal = 'female';
                                   },
                                 ),
@@ -189,11 +223,12 @@ class SignupView extends StatelessWidget {
                                     'Female'.tr,
                                     style: GoogleFonts.inter(
                                         fontSize: 14,
-                                        color: controller.selectedGender.value == 2
-                                            ? themeChange.isDarkTheme()
-                                                ? AppThemData.white
-                                                : AppThemData.grey950
-                                            : AppThemData.grey500,
+                                        color:
+                                            controller.selectedGender.value == 2
+                                                ? themeChange.isDarkTheme()
+                                                    ? AppThemData.white
+                                                    : AppThemData.grey950
+                                                : AppThemData.grey500,
                                         fontWeight: FontWeight.w500),
                                   ),
                                 ),
@@ -208,7 +243,8 @@ class SignupView extends StatelessWidget {
                                 buttonColor: AppThemData.primary500,
                                 buttonTextColor: AppThemData.black,
                                 onTap: () {
-                                  if (controller.formKey.value.currentState!.validate()) {
+                                  if (controller.formKey.value.currentState!
+                                      .validate()) {
                                     controller.createAccount();
                                   }
                                 }),

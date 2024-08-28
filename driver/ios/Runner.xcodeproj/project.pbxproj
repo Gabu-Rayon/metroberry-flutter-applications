@@ -496,7 +496,7 @@
 				DEVELOPMENT_TEAM = 38U25BZFCV;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "MyTaxi Driver";
+				INFOPLIST_KEY_CFBundleDisplayName = "MetroBerry Driver";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -682,7 +682,7 @@
 				DEVELOPMENT_TEAM = 38U25BZFCV;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "MyTaxi Driver";
+				INFOPLIST_KEY_CFBundleDisplayName = "MetroBerry";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -712,7 +712,7 @@
 				DEVELOPMENT_TEAM = 38U25BZFCV;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "MyTaxi Driver";
+				INFOPLIST_KEY_CFBundleDisplayName = "MetroBerry";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

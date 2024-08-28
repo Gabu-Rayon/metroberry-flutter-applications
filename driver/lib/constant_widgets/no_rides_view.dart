@@ -29,18 +29,23 @@ class NoRidesView extends StatelessWidget {
             'No Rides Found',
             textAlign: TextAlign.center,
             style: GoogleFonts.inter(
-              color: themeChange.isDarkTheme() ? AppThemData.grey25 : AppThemData.grey950,
+              color: themeChange.isDarkTheme()
+                  ? AppThemData.grey25
+                  : AppThemData.grey950,
               fontSize: 18,
               fontWeight: FontWeight.w700,
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20, top: 4, bottom: 24),
+            padding:
+                const EdgeInsets.only(left: 20, right: 20, top: 4, bottom: 24),
             child: Text(
-              'Your ride history is currently empty. Start your journey with MyTaxi by riding your first ride now!',
+              'Your ride history is currently empty. Start your journey with MetroBerry by riding your first ride now!',
               textAlign: TextAlign.center,
               style: GoogleFonts.inter(
-                color: themeChange.isDarkTheme() ? AppThemData.grey25 : AppThemData.grey950,
+                color: themeChange.isDarkTheme()
+                    ? AppThemData.grey25
+                    : AppThemData.grey950,
                 fontSize: 14,
                 fontWeight: FontWeight.w400,
               ),

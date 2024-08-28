@@ -1,1 +1,90 @@
-{  "Replace your file": "1" }
+{
+  "project_info": {
+    "project_number": "107316073750",
+    "project_id": "metrotaxi-782a6",
+    "storage_bucket": "metrotaxi-782a6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:107316073750:android:a9a33daa0e79e76008ac37",
+        "android_client_info": {
+          "package_name": "com.mytaxi.admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "107316073750-jcmk5o0emooqer7o3ke3pgcm2jb34a0u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIXlDAva_RnlC5kiTPfh99o_vOJkWbnEM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "107316073750-jcmk5o0emooqer7o3ke3pgcm2jb34a0u.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "107316073750-slmhncg61mp3ekhp6kfn8jn24ousd9mu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mytaxi.drivers"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:107316073750:android:92a95bfc9735e2fd08ac37",
+        "android_client_info": {
+          "package_name": "com.mytaxi.driver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "107316073750-u07e29nn40pdr9o4kvq0qpn1lditvem2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mytaxi.driver",
+            "certificate_hash": "c32288f04f96041d1427997e4ac08c75ff02c50b"
+          }
+        },
+        {
+          "client_id": "107316073750-jcmk5o0emooqer7o3ke3pgcm2jb34a0u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIXlDAva_RnlC5kiTPfh99o_vOJkWbnEM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "107316073750-jcmk5o0emooqer7o3ke3pgcm2jb34a0u.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "107316073750-slmhncg61mp3ekhp6kfn8jn24ousd9mu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mytaxi.drivers"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

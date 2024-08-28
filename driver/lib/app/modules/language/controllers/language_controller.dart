@@ -21,7 +21,8 @@ class LanguageController extends GetxController {
     List<LanguageModel> data = await FireStoreUtils.getLanguage();
     languageList.addAll(data);
     LanguageModel temp = await Constant.getLanguage();
-    selectedLanguage.value = languageList[languageList.indexWhere((element) => element.id == temp.id) ?? 0 ];
+    selectedLanguage.value = languageList[
+        languageList.indexWhere((element) => element.id == temp.id)];
     isLoading(false);
   }
 }

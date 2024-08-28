@@ -83,18 +83,18 @@ class IntroScreenView extends StatelessWidget {
                       },
                       children: [
                         IntroScreenPage(
-                          title: "Welcome to MyTaxi".tr,
+                          title: "Welcome to MetroBerry".tr,
                           body: "Your reliable partner for swift and convenient rides. Experience hassle-free transportation at your fingertips.",
                           image: "assets/icon/intro_image_one.svg",
                         ),
                         IntroScreenPage(
                           title: " Fast and Reliable".tr,
-                          body: "MyTaxi ensures prompt and reliable rides, getting you to your destination with speed and efficiency.",
+                          body: "MetroBerry ensures prompt and reliable rides, getting you to your destination with speed and efficiency.",
                           image: "assets/icon/intro_image_two.svg",
                         ),
                         IntroScreenPage(
                           title: "Seamless User Experience".tr,
-                          body: "Enjoy a user-friendly interface, easy bookings, and secure payments with MyTaxi. Your journey, your way.",
+                          body: "Enjoy a user-friendly interface, easy bookings, and secure payments with MetroBerry. Your journey, your way.",
                           image: "assets/icon/intro_image_three.svg",
                         ),
                       ],

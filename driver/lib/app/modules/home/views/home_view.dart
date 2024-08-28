@@ -51,7 +51,7 @@ class HomeView extends GetView<HomeController> {
                   SvgPicture.asset("assets/icon/logo_only.svg"),
                   const SizedBox(width: 10),
                   Text(
-                    'MyTaxi'.tr,
+                    'MetroBerry'.tr,
                     style: GoogleFonts.inter(
                       color: themeChange.isDarkTheme() ? AppThemData.white : AppThemData.black,
                       fontSize: 20,

@@ -75,7 +75,7 @@ class MyWalletController extends GetxController {
         paymentModel.value = value;
         if (paymentModel.value.strip!.isActive == true) {
           Stripe.publishableKey = paymentModel.value.strip!.clientPublishableKey.toString();
-          Stripe.merchantIdentifier = 'MyTaxi';
+          Stripe.merchantIdentifier = 'MetroBerry';
           Stripe.instance.applySettings();
         }
         if (paymentModel.value.paypal!.isActive == true) {
@@ -172,7 +172,7 @@ class MyWalletController extends GetxController {
                       primary: AppThemData.primary500,
                     ),
                   ),
-                  merchantDisplayName: 'MyTaxi'));
+                  merchantDisplayName: 'MetroBerry'));
           displayStripePaymentSheet(amount: amount);
         }
       } catch (e, s) {

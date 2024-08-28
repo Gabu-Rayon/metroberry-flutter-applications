@@ -17,16 +17,19 @@ class VerifyDriverModel {
     this.verifyDocument,
   });
 
-  factory VerifyDriverModel.fromRawJson(String str) => VerifyDriverModel.fromJson(json.decode(str));
+  factory VerifyDriverModel.fromRawJson(String str) =>
+      VerifyDriverModel.fromJson(json.decode(str));
 
   String toRawJson() => json.encode(toJson());
 
-  factory VerifyDriverModel.fromJson(Map<String, dynamic> json) => VerifyDriverModel(
+  factory VerifyDriverModel.fromJson(Map<String, dynamic> json) =>
+      VerifyDriverModel(
         createAt: json["createAt"],
         driverEmail: json["driverEmail"],
         driverId: json["driverId"],
         driverName: json["driverName"],
-        verifyDocument: List<VerifyDocument>.from(json["verifyDocument"].map((x) => VerifyDocument.fromJson(x))),
+        verifyDocument: List<VerifyDocument>.from(
+            json["verifyDocument"].map((x) => VerifyDocument.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
@@ -34,7 +37,9 @@ class VerifyDriverModel {
         "driverEmail": driverEmail,
         "driverId": driverId,
         "driverName": driverName,
-        "verifyDocument": verifyDocument == null ? [] : List<dynamic>.from(verifyDocument!.map((x) => x.toJson())),
+        "verifyDocument": verifyDocument == null
+            ? []
+            : List<dynamic>.from(verifyDocument!.map((x) => x.toJson())),
       };
 }
 
@@ -55,7 +60,8 @@ class VerifyDocument {
     this.isVerify,
   });
 
-  factory VerifyDocument.fromRawJson(String str) => VerifyDocument.fromJson(json.decode(str));
+  factory VerifyDocument.fromRawJson(String str) =>
+      VerifyDocument.fromJson(json.decode(str));
 
   String toRawJson() => json.encode(toJson());
 
@@ -73,7 +79,7 @@ class VerifyDocument {
         "name": name,
         "number": number,
         "dob": dob,
-        "documentImage": documentImage ?? [],
+        "documentImage": documentImage,
         "isVerify": isVerify,
       };
 }
