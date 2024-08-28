@@ -50,22 +50,22 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'Replace with your key',
-    appId: 'Replace with your key',
-    messagingSenderId: 'Replace with your key',
-    projectId: 'Replace with your key',
-    storageBucket: 'Replace with your key',
+    apiKey: 'AIzaSyBIXlDAva_RnlC5kiTPfh99o_vOJkWbnEM',
+    appId: '1:107316073750:android:58be5f005e4f432808ac37',
+    messagingSenderId: '107316073750',
+    projectId: 'metrotaxi-782a6',
+    storageBucket: 'metrotaxi-782a6.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'Replace with your key',
-    appId: 'Replace with your key',
-    messagingSenderId: 'Replace with your key',
-    projectId: 'Replace with your key',
-    storageBucket: 'Replace with your key',
-    androidClientId: 'Replace with your key',
-    iosClientId: 'Replace with your key',
-    iosBundleId: 'Replace with your key',
+    apiKey: 'AIzaSyDvMCKDNnORaG3lfyhF0l04KI3MmyAqLHg',
+    appId: '1:107316073750:ios:8c799e0fcc9682cb08ac37',
+    messagingSenderId: '107316073750',
+    projectId: 'metrotaxi-782a6',
+    storageBucket: 'metrotaxi-782a6.appspot.com',
+    androidClientId: '107316073750-u07e29nn40pdr9o4kvq0qpn1lditvem2.apps.googleusercontent.com',
+    iosClientId: '107316073750-3oa36g6qf8m2o00vda1csp84tp40u5n3.apps.googleusercontent.com',
+    iosBundleId: 'com.mytaxi.customers',
   );
 
 }

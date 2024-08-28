@@ -111,31 +111,51 @@ class UploadDocumentsController extends GetxController {
     }
   }
 
-  uploadDocument(DocumentsModel document) async {
+  Future<void> uploadDocument(DocumentsModel document) async {
     ShowToastDialog.showLoader("Please wait");
+
     if (verifyDocument.value.documentImage.isNotEmpty) {
+      List<String> updatedDocumentImages =
+          []; // To hold the updated list of document images
+
       for (int i = 0; i < verifyDocument.value.documentImage.length; i++) {
-        if (verifyDocument.value.documentImage[i].isNotEmpty) {
-          if (Constant.hasValidUrl(
-                  verifyDocument.value.documentImage[i].toString()) ==
-              false) {
-            String image =
-                await Constant.uploadDriverDocumentImageToFireStorage(
-              File(verifyDocument.value.documentImage[i].toString()),
-              "documents/${document.id}/${FireStoreUtils.getCurrentUid()}",
-              verifyDocument.value.documentImage[i].split('/').last,
-            );
-            verifyDocument.value.documentImage.removeAt(i);
-            verifyDocument.value.documentImage.insert(i, image);
+        String imagePath = verifyDocument.value.documentImage[i];
+
+        if (imagePath.isNotEmpty) {
+          bool isUrlValid = Constant.hasValidUrl(imagePath);
+
+          if (!isUrlValid) {
+            try {
+              File file = File(imagePath);
+              String imageUrl =
+                  await Constant.uploadDriverDocumentImageToFireStorage(
+                file,
+                "documents/${document.id}/${FireStoreUtils.getCurrentUid()}",
+                file.uri.pathSegments.last,
+              );
+              updatedDocumentImages.add(imageUrl);
+            } catch (e) {
+              print('Error uploading image: $e');
+              ShowToastDialog.showToast(
+                  "Error uploading image. Please try again.");
+              ShowToastDialog.closeLoader();
+              return;
+            }
+          } else {
+            updatedDocumentImages.add(imagePath); // Keep the valid URL
           }
         }
       }
+
+      verifyDocument.value.documentImage = updatedDocumentImages;
     }
+
     verifyDocument.value.documentId = document.id;
     verifyDocument.value.name = nameController.text;
     verifyDocument.value.number = numberController.text;
     verifyDocument.value.dob = dobController.text;
     verifyDocument.value.isVerify = false;
+
     VerifyDocumentsController verifyDocumentsController =
         Get.find<VerifyDocumentsController>();
     DriverUserModel? userModel = await FireStoreUtils.getDriverUserProfile(
@@ -143,6 +163,7 @@ class UploadDocumentsController extends GetxController {
     List<VerifyDocument> verifyDocumentList =
         verifyDocumentsController.verifyDriverModel.value.verifyDocument ?? [];
     verifyDocumentList.add(verifyDocument.value);
+
     VerifyDriverModel verifyDriverModel = VerifyDriverModel(
       createAt: Timestamp.now(),
       driverEmail: userModel!.email ?? '',
@@ -150,8 +171,10 @@ class UploadDocumentsController extends GetxController {
       driverName: userModel.fullName ?? '',
       verifyDocument: verifyDocumentList,
     );
+
     bool isUpdated = await FireStoreUtils.addDocument(verifyDriverModel);
     ShowToastDialog.closeLoader();
+
     if (isUpdated) {
       ShowToastDialog.showToast(
           "${document.title} updated, Please wait for verification.");
